@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Inter } from "next/font/google";
-import { Navbar } from "@/components/navigation/Navbar";
+import { PageWrapper } from "@/components/layout/PageWrapper";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -20,8 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <Navbar />
-          {children}
+          <PageWrapper>{children}</PageWrapper>
         </ThemeProvider>
       </body>
     </html>
