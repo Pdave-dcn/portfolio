@@ -2,7 +2,7 @@ import { memo } from "react";
 import Link from "next/link";
 import { CTA_DATA } from "@/lib/homepage-data";
 import { typography, spacing } from "@/lib/design-tokens";
-import { Divider } from "../ui/divider";
+import { Divider } from "../../ui/divider";
 
 const CTASection = memo(() => {
   return (

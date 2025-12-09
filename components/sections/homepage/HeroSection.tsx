@@ -1,5 +1,5 @@
 import { highlights, typography } from "@/lib/design-tokens";
-import { Divider } from "../ui/divider";
+import { Divider } from "../../ui/divider";
 import { memo } from "react";
 import { HERO_DATA } from "@/lib/homepage-data";
 

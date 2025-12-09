@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { INTRO_DATA } from "@/lib/homepage-data";
-import { Divider } from "../ui/divider";
+import { Divider } from "../../ui/divider";
 import { typography } from "@/lib/design-tokens";
 
 const IntroParagraph = memo(() => {

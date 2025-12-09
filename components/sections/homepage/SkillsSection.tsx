@@ -5,7 +5,7 @@ import { techIcons } from "@/lib/tech-icons";
 import { SKILLS_DATA, STRENGTHS_DATA } from "@/lib/homepage-data";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { Divider } from "../ui/divider";
+import { Divider } from "../../ui/divider";
 import { typography } from "@/lib/design-tokens";
 
 const SkillsSection = memo(() => {
