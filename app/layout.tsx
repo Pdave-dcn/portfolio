@@ -7,8 +7,9 @@ import { PageWrapper } from "@/components/layout/PageWrapper";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Pdave — Full-Stack Developer",
-  description: "Portfolio, projects, and contact information.",
+  title: "David Providence - Full-Stack Web Developer",
+  description:
+    "Full-stack developer crafting intuitive interfaces and performant, production-ready software.",
 };
 
 export default function RootLayout({

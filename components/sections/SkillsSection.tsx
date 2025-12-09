@@ -1,20 +1,24 @@
 "use client";
 
+import { memo } from "react";
 import { techIcons } from "@/lib/tech-icons";
+import { SKILLS_DATA, STRENGTHS_DATA } from "@/lib/homepage-data";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { Divider } from "../ui/divider";
+import { typography } from "@/lib/design-tokens";
 
-const SkillsSection = () => {
+const SkillsSection = memo(() => {
   return (
     <div className="mt-2 md:mt-5 flex flex-col gap-8 md:gap-15">
       <div className="flex justify-between items-start">
-        <h2 className="font-bold flex flex-col text-[2.5rem] leading-8.5 md:text-[5rem] lg:text-[6rem] md:leading-20">
-          <span>Skills</span>
-          <span>&Techs</span>
+        <h2 className={`flex flex-col ${typography.heading}`}>
+          <span>{SKILLS_DATA.heading.line1}</span>
+          <span>{SKILLS_DATA.heading.line2}</span>
         </h2>
 
         <Link
-          href={"/projects"}
+          href="/projects"
           className="flex items-center gap-1.5 text-sm md:text-base text-muted-foreground font-medium"
         >
           <span className="hidden md:block">View</span> Projects
@@ -22,7 +26,7 @@ const SkillsSection = () => {
         </Link>
       </div>
 
-      <div className="h-px bg-foreground" />
+      <Divider />
 
       <div className="flex justify-center md:block">
         <ul
@@ -36,6 +40,7 @@ const SkillsSection = () => {
               className="flex flex-col items-center justify-start text-center p-2 w-1/3 md:w-auto"
             >
               <span
+                role="img"
                 aria-hidden
                 className="size-10 md:size-12 lg:size-15 flex items-center justify-center mb-1 text-foreground"
               >
@@ -49,40 +54,43 @@ const SkillsSection = () => {
         </ul>
       </div>
 
-      <div className="h-px bg-foreground" />
+      <Divider />
 
       <div className="flex justify-between items-start lg:items-center -mt-5 md:-mt-12">
         <h3 className="text-[1.5rem] md:text-[2rem] lg:text-[3.7rem] font-semibold md:font-bold lg:font-semibold">
-          Strengths
+          {SKILLS_DATA.strengthsHeading}
         </h3>
 
-        <ul className="flex flex-col md:flex-row gap-4 md:gap-12 lg:gap-20 md:text-xl list-none">
-          <li className="mt-3.5 md:mt-0">
-            <ul className="space-y-1">
-              <li className="before:content-['•'] before:mr-1 md:before:mr-2">
-                Clean, maintainable code
-              </li>
-              <li className="before:content-['•'] before:mr-1 md:before:mr-2">
-                Thoughtful UI & motion
-              </li>
-            </ul>
-          </li>
-          <li>
-            <ul className="space-y-1">
-              <li className="before:content-['•'] before:mr-1 md:before:mr-2">
-                Solid API + data modeling
-              </li>
-              <li className="before:content-['•'] before:mr-1 md:before:mr-2">
-                Quick learner, reliable builder
-              </li>
-            </ul>
-          </li>
+        <ul
+          className={`flex flex-col md:flex-row gap-4 md:gap-12 lg:gap-20 list-none ${typography.body}`}
+        >
+          {STRENGTHS_DATA.map((group, groupIndex) => (
+            <li
+              key={groupIndex}
+              className={groupIndex === 0 ? "mt-3.5 md:mt-0" : ""}
+            >
+              <ul className="space-y-1">
+                {group.items.map((item, itemIndex) => (
+                  <li
+                    key={itemIndex}
+                    className="before:content-['•'] before:mr-1 md:before:mr-2"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
         </ul>
       </div>
 
-      <div className="h-[5px] //mt-5 md:-mt-10 bg-foreground" />
+      <div className="md:-mt-10">
+        <Divider />
+      </div>
     </div>
   );
-};
+});
+
+SkillsSection.displayName = "SkillsSection";
 
 export default SkillsSection;

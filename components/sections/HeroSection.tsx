@@ -1,28 +1,34 @@
-const HeroSection = () => {
+import { highlights, typography } from "@/lib/design-tokens";
+import { Divider } from "../ui/divider";
+import { memo } from "react";
+import { HERO_DATA } from "@/lib/homepage-data";
+
+const HeroSection = memo(() => {
   return (
-    <>
-      <div className="mt-35 md:mt-40 flex flex-col gap-10 md:gap-7">
-        <div>
-          <h1 className="flex flex-col text-[4rem] leading-15 md:leading-25 lg:leading-30 md:text-[8rem] lg:text-[9.5rem] font-bold">
-            <span className="relative inline-block w-fit before:content-[''] before:absolute before:top-[60%] before:left-0 before:w-full before:h-1/2 before:bg-background before:-z-10">
-              David
-            </span>
+    <div className="mt-35 md:mt-40 flex flex-col gap-10 md:gap-7">
+      <div>
+        <h1 className={`flex flex-col ${typography.hero}`}>
+          <span className={highlights.textHighlight}>
+            {HERO_DATA.name.firstName}
+          </span>
 
-            <span className="relative inline-block w-fit before:content-[''] before:absolute before:top-[60%] before:left-0 before:w-full before:h-1/2 before:bg-background before:-z-10">
-              Providence
-            </span>
-          </h1>
+          <span className={highlights.textHighlight}>
+            {HERO_DATA.name.lastName}
+          </span>
+        </h1>
 
-          <p className="md:mt-5 text-2xl text-pretty md:text-3xl lg:text-4xl relative inline-block w-fit before:content-[''] before:absolute before:top-[8%] before:left-0 before:w-[90%] before:h-1/2 before:bg-background before:-z-10">
-            is a full-stack web developer crafting intuitive interfaces and
-            performant, production-ready software.
-          </p>
-        </div>
-
-        <div className="h-px bg-foreground" />
+        <p
+          className={`md:mt-5 text-pretty ${typography.tagline} ${highlights.taglineHighlight}`}
+        >
+          {HERO_DATA.tagline}
+        </p>
       </div>
-    </>
+
+      <Divider />
+    </div>
   );
-};
+});
+
+HeroSection.displayName = "HeroSection";
 
 export default HeroSection;
