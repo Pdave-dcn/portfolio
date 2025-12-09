@@ -1,6 +1,6 @@
 "use client";
 
-import { ShapeCircle } from "./ui/shape-circle";
+import { ShapeCircle } from "../ui/shape-circle";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 

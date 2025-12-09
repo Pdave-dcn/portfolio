@@ -1,6 +1,6 @@
 "use client";
 
-import BackgroundShapes from "../BackgroundShapes";
+import BackgroundShapes from "../background/BackgroundShapes";
 import { Navbar } from "../navigation/Navbar";
 
 export function PageWrapper({ children }: { children: React.ReactNode }) {
@@ -12,7 +12,7 @@ export function PageWrapper({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* Main content constrained to 80% width */}
-      <div className="w-[90%] md:w-[80%] mt-10 md:mt-20">
+      <div className="w-[95%] lg:w-[80%] mt-10 md:mt-20">
         <Navbar />
         {children}
       </div>
