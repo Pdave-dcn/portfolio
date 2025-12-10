@@ -3,6 +3,7 @@ import Link from "next/link";
 import { typography } from "@/lib/design-tokens";
 import { Project } from "@/lib/project-page-data";
 import { cn } from "@/lib/utils";
+import { ArrowUpRight } from "lucide-react";
 
 interface ProjectCardProps {
   project: Project;
@@ -11,15 +12,19 @@ interface ProjectCardProps {
 
 export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
   const { type, tags, name, subtitle, description, links } = project;
+  const projectLinks = [
+    { href: links.demo, label: "Demo" },
+    { href: links.repo, label: "Repo" },
+  ];
 
   return (
     <article
-      className={cn("w-full", className)}
+      className={cn("w-full group/card", className)}
       aria-labelledby={`project-${project.id}-title`}
     >
-      <div className="border-b border-muted-foreground flex flex-col gap-15 py-5 mt-3 md:py-7 md:mt-4.5 lg:mt-5">
+      <div className="border-b border-muted-foreground/50 md:border-muted-foreground/30 group-hover/card:border-foreground/60 flex flex-col gap-15 py-5 mt-3 md:py-7 md:mt-4.5 lg:mt-5 transition-colors duration-300">
         {/* Project Type & Tags */}
-        <div className="w-full flex justify-between items-center text-xs text-muted-foreground opacity-70">
+        <div className="w-full flex justify-between items-center text-xs text-muted-foreground/80 md:text-muted-foreground/50 group-hover/card:text-muted-foreground transition-colors duration-300 pointer-events-none">
           <span aria-label="Project type">{type}</span>
           <div className="flex gap-2" role="list" aria-label="Project tags">
             {tags.map((tag) => (
@@ -35,11 +40,21 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
           <div className="flex flex-col gap-1 lg:gap-2">
             <h2
               id={`project-${project.id}-title`}
-              className={typography.heading}
+              className={cn(
+                typography.heading,
+                "transition-colors duration-300 group-hover/card:text-foreground",
+                "pointer-events-none"
+              )}
             >
               {name}
             </h2>
-            <p className={cn(typography.bodyLarge, "md:text-2xl text-pretty")}>
+            <p
+              className={cn(
+                typography.bodyLarge,
+                "md:text-2xl text-pretty",
+                "pointer-events-none"
+              )}
+            >
               {subtitle}
             </p>
           </div>
@@ -47,7 +62,8 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
           <p
             className={cn(
               typography.body,
-              "text-muted-foreground opacity-70 text-pretty lg:w-[60%]"
+              "text-muted-foreground/80 md:text-muted-foreground/60 group-hover/card:text-muted-foreground text-pretty lg:w-[60%] transition-colors duration-300",
+              "pointer-events-none"
             )}
           >
             {description}
@@ -56,46 +72,43 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
 
         {/* Project Links */}
         <nav aria-label={`Links for ${name}`}>
-          <div className="text-sm font-semibold">
-            <ul className="flex gap-4 items-center list-none">
-              <li>
+          <div className="flex gap-1 text-xs md:text-sm">
+            {projectLinks.map((link, index) => (
+              <div key={link.href} className="flex items-center gap-1">
                 <Link
-                  href={links.demo}
-                  className="hover:text-foreground/80 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background rounded-sm transition-colors"
-                  target={links.demo.startsWith("http") ? "_blank" : undefined}
+                  href={link.href}
+                  className={cn(
+                    "group/link inline-flex items-center gap-1 py-2 px-3 font-medium",
+                    "border-b border-muted-foreground/30 md:border-muted-foreground/20",
+                    "hover:border-foreground/50",
+                    "transition-colors duration-200"
+                  )}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel={
-                    links.demo.startsWith("http")
+                    link.href.startsWith("http")
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  aria-label={`View demo of ${name}${
-                    links.demo.startsWith("http") ? " (opens in new tab)" : ""
+                  aria-label={`View ${link.label.toLowerCase()} of ${name}${
+                    link.href.startsWith("http") ? " (opens in new tab)" : ""
                   }`}
                 >
-                  Demo
+                  <span>{link.label}</span>
+                  <ArrowUpRight
+                    size={12}
+                    className="opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200"
+                  />
                 </Link>
-              </li>
-              <li aria-hidden>
-                <span className="text-muted-foreground">|</span>
-              </li>
-              <li>
-                <Link
-                  href={links.repo}
-                  className="hover:text-foreground/80 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background rounded-sm transition-colors"
-                  target={links.repo.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    links.repo.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  aria-label={`View repository of ${name}${
-                    links.repo.startsWith("http") ? " (opens in new tab)" : ""
-                  }`}
-                >
-                  Repo
-                </Link>
-              </li>
-            </ul>
+                {index < projectLinks.length - 1 && (
+                  <span
+                    className="text-muted-foreground/50 mx-1"
+                    aria-hidden="true"
+                  >
+                    /
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
         </nav>
       </div>

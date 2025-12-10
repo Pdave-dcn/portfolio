@@ -1,6 +1,6 @@
 import HeroSection from "@/components/sections/projectPage/HeroSection";
 import ProjectSection from "@/components/sections/projectPage/ProjectSection";
-import Link from "next/link";
+import FooterNavigation from "@/components/sections/projectPage/FooterNavigation";
 
 const ProjectPage = () => {
   return (
@@ -10,10 +10,7 @@ const ProjectPage = () => {
         <ProjectSection />
       </div>
 
-      <div className="flex gap-4 mb-10 text-xs">
-        <Link href="/">Home</Link>
-        <Link href="/contact">Contact</Link>
-      </div>
+      <FooterNavigation />
     </div>
   );
 };
