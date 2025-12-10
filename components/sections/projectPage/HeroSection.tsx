@@ -9,9 +9,7 @@ const HeroSection = () => {
         <h1 className={`${typography.hero} ${highlights.textHighlight}`}>
           {HERO_DATA.title}
         </h1>
-        <p
-          className={`text-pretty mt-2 md:mt-2.5 lg:mt-3 ${typography.tagline}`}
-        >
+        <p className={`mt-2 md:mt-2.5 lg:mt-3 ${typography.tagline}`}>
           {HERO_DATA.tagline}
         </p>
       </div>

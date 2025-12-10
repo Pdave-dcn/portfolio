@@ -5,7 +5,7 @@ import SkillsSection from "@/components/sections/homepage/SkillsSection";
 
 const HomePage = () => {
   return (
-    <div className="mb-28">
+    <div>
       <HeroSection />
       <IntroParagraph />
       <SkillsSection />

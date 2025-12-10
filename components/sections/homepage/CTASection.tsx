@@ -3,31 +3,50 @@ import Link from "next/link";
 import { CTA_DATA } from "@/lib/homepage-data";
 import { typography, spacing } from "@/lib/design-tokens";
 import { Divider } from "../../ui/divider";
+import { ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const CTASection = memo(() => {
   return (
-    <div className={`flex flex-col ${spacing.sectionGap}`}>
-      <div>
-        <h2
-          className={`mt-2 flex flex-col leading-8 ${typography.sectionHeading}`}
-        >
-          <span>{CTA_DATA.heading.line1}</span>
-          <span>{CTA_DATA.heading.line2}</span>
-        </h2>
-        <p className={`text-pretty mt-2.5 ${typography.ctaSubheading}`}>
-          {CTA_DATA.subheading}
-        </p>
+    <section className={`flex flex-col ${spacing.sectionGap}`}>
+      {/* <Divider /> */}
+
+      <div className="py-12 md:py-16 space-y-8 md:space-y-10">
+        <div>
+          <h2
+            className={cn(
+              typography.sectionHeading,
+              "mt-2 flex flex-col leading-8"
+            )}
+          >
+            <span>{CTA_DATA.heading.line1}</span>
+            <span>{CTA_DATA.heading.line2}</span>
+          </h2>
+          <p className={`text-pretty mt-2.5 ${typography.ctaSubheading}`}>
+            {CTA_DATA.subheading}
+          </p>
+        </div>
+
+        <div className="space-y-1">
+          {CTA_DATA.links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="group flex items-center justify-between py-4 border-b border-muted-foreground/20 hover:border-foreground/40 transition-colors "
+              aria-label={`Navigate to ${link.label.toLowerCase()} page`}
+            >
+              <span className={cn(typography.ctaLink)}>{link.label}</span>
+              <ArrowUpRight
+                size={18}
+                className="text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+              />
+            </Link>
+          ))}
+        </div>
       </div>
 
-      <div className={`flex flex-col gap-4.5 md:gap-7 ${typography.ctaLink}`}>
-        {CTA_DATA.links.map((link) => (
-          <Link key={link.href} href={link.href}>
-            <Divider />
-            <span>{link.label}</span>
-          </Link>
-        ))}
-      </div>
-    </div>
+      <Divider thick />
+    </section>
   );
 });
 

@@ -5,10 +5,10 @@ export const typography = {
   subheading: "text-[1.5rem] md:text-[2rem] lg:text-[3.7rem] font-semibold",
   sectionHeading:
     "text-[2.5rem] leading-8 md:text-[5rem] lg:text-[6rem] md:leading-20 font-bold",
-  ctaLink: "text-[1.3rem] md:text-[1.6rem] lg:text-[2rem]",
-  body: "text-base md:text-xl",
-  bodyLarge: "text-xl",
-  tagline: "text-2xl md:text-3xl lg:text-4xl",
+  ctaLink: "text-[1.1rem] md:text-[1.6rem] //lg:text-[2rem]",
+  body: "text-base md:text-xl text-pretty",
+  bodyLarge: "text-xl text-pretty",
+  tagline: "text-2xl md:text-3xl lg:text-4xl text-pretty",
   ctaSubheading: "text-[1.5rem] md:text-[2rem] lg:text-[2.3rem]",
 } as const;
 

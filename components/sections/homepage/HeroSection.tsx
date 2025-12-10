@@ -18,7 +18,7 @@ const HeroSection = memo(() => {
         </h1>
 
         <p
-          className={`md:mt-5 text-pretty ${typography.tagline} ${highlights.taglineHighlight}`}
+          className={`md:mt-5 ${typography.tagline} ${highlights.taglineHighlight}`}
         >
           {HERO_DATA.tagline}
         </p>
