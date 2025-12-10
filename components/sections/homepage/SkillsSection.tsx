@@ -85,7 +85,7 @@ const SkillsSection = memo(() => {
       </div>
 
       <div className="md:-mt-10">
-        <Divider />
+        <Divider thick />
       </div>
     </div>
   );
