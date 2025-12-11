@@ -17,14 +17,14 @@ type ShapeConfig = {
 };
 
 const MOBILE_SHAPE_CONFIG: ShapeConfig = {
-  dots: 5,
+  dots: 10,
   horizontal: 2,
   vertical: 2,
   solid: 1,
 };
 
 const DESKTOP_SHAPE_CONFIG: ShapeConfig = {
-  dots: 5,
+  dots: 10,
   horizontal: 3,
   vertical: 2,
   solid: 1,

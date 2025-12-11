@@ -20,7 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider
+          attribute="class"
+          value={{
+            light: "light",
+            dark: "dark",
+            neon: "neon",
+          }}
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
           <PageWrapper>{children}</PageWrapper>
         </ThemeProvider>
       </body>

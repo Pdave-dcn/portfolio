@@ -20,7 +20,10 @@ const CTASection = memo(() => {
             )}
           >
             <span>{CTA_DATA.heading.line1}</span>
-            <span>{CTA_DATA.heading.line2}</span>
+            <div>
+              <span>{CTA_DATA.heading.line2}</span>
+              <span className="neon:text-accent">{CTA_DATA.heading.line3}</span>
+            </div>
           </h2>
           <p className={`text-pretty mt-2.5 ${typography.ctaSubheading}`}>
             {CTA_DATA.subheading}
@@ -32,13 +35,13 @@ const CTASection = memo(() => {
             <Link
               key={link.href}
               href={link.href}
-              className="group flex items-center justify-between py-4 border-b border-muted-foreground/20 hover:border-foreground/40 transition-colors "
+              className="group flex items-center justify-between py-4 border-b border-muted-foreground/20 neon:border-accent/20 hover:border-foreground/40 neon:hover:border-accent/40 transition-colors "
               aria-label={`Navigate to ${link.label.toLowerCase()} page`}
             >
               <span className={cn(typography.ctaLink)}>{link.label}</span>
               <ArrowUpRight
                 size={18}
-                className="text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                className="text-muted-foreground neon:text-accent/40 group-hover:text-foreground neon:group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
               />
             </Link>
           ))}

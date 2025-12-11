@@ -52,7 +52,7 @@ const patternStyles: Record<string, React.CSSProperties> = {
   dots: {
     backgroundColor: "var(--background)",
     backgroundImage:
-      "radial-gradient(circle, var(--foreground) 12%, transparent 12%)",
+      "radial-gradient(circle, var(--primary) 12%, transparent 12%)",
     backgroundSize: "12px 12px",
   },
   vertical: {

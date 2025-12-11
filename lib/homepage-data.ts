@@ -30,7 +30,8 @@ export const STRENGTHS_DATA = [
 export const SKILLS_DATA = {
   heading: {
     line1: "Skills",
-    line2: "&Techs",
+    line2: "&",
+    line3: "Techs",
   },
   strengthsHeading: "Strengths",
 } as const;
@@ -38,7 +39,8 @@ export const SKILLS_DATA = {
 export const CTA_DATA = {
   heading: {
     line1: "Want to see",
-    line2: "more?",
+    line2: "more",
+    line3: "?",
   },
   subheading: "Explore my projects or get in touch.",
   links: [
