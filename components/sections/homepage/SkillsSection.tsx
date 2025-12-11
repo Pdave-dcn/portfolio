@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Divider } from "../../ui/divider";
 import { typography } from "@/lib/design-tokens";
 import { cn } from "@/lib/utils";
+import { NeonGlow } from "@/components/NeonGlow";
 
 const SkillsSection = memo(() => {
   return (
@@ -64,17 +65,20 @@ const SkillsSection = memo(() => {
               key={tech.name}
               className="flex flex-col items-center justify-start text-center p-2 w-1/3 md:w-auto"
             >
-              <span
-                role="img"
-                aria-label={tech.name}
-                className={cn(
-                  "flex items-center justify-center",
-                  "size-10 md:size-12 lg:size-15 mb-1 text-foreground",
-                  "sage:text-primary"
-                )}
-              >
-                {tech.svg}
-              </span>
+              <NeonGlow color={tech.color}>
+                <span
+                  role="img"
+                  aria-label={tech.name}
+                  className={cn(
+                    "flex items-center justify-center",
+                    "size-10 md:size-12 lg:size-15 mb-1 text-foreground",
+                    "sage:text-primary"
+                  )}
+                >
+                  {tech.svg}
+                </span>
+              </NeonGlow>
+
               <span className="text-sm font-medium text-muted-foreground sage:text-primary">
                 {tech.name}
               </span>

@@ -7,9 +7,7 @@ export const Divider = ({
 }) => (
   <div
     className={`${thick ? "h-[5px]" : "h-px"} ${
-      muted
-        ? "bg-muted-foreground opacity-70 neon:bg-primary"
-        : "bg-foreground neon:bg-primary"
+      muted ? "bg-muted-foreground opacity-70" : "bg-foreground"
     }`}
   />
 );

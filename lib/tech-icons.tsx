@@ -3,6 +3,7 @@
 export const techIcons = [
   {
     name: "HTML5",
+    color: "#E34F26",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>HTML5</title>
@@ -15,6 +16,7 @@ export const techIcons = [
   },
   {
     name: "CSS",
+    color: "#663399",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>CSS</title>
@@ -27,6 +29,7 @@ export const techIcons = [
   },
   {
     name: "JavaScript",
+    color: "#F7DF1E",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>JavaScript</title>
@@ -39,6 +42,7 @@ export const techIcons = [
   },
   {
     name: "TypeScript",
+    color: "#3178C6",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>TypeScript</title>
@@ -51,6 +55,7 @@ export const techIcons = [
   },
   {
     name: "React",
+    color: "#61DAFB",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>React</title>
@@ -63,6 +68,7 @@ export const techIcons = [
   },
   {
     name: "Next.js",
+    color: "#D6D6D6",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>Next.js</title>
@@ -75,6 +81,7 @@ export const techIcons = [
   },
   {
     name: "Node.js",
+    color: "#5FA04E",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>Node.js</title>
@@ -87,6 +94,7 @@ export const techIcons = [
   },
   {
     name: "Express",
+    color: "#FFFFFF",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>Express</title>
@@ -99,6 +107,7 @@ export const techIcons = [
   },
   {
     name: "PostgreSQL",
+    color: "#4169E1",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>PostgreSQL</title>
@@ -111,6 +120,7 @@ export const techIcons = [
   },
   {
     name: "Prisma",
+    color: "#2D3748",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>Prisma</title>
@@ -123,6 +133,7 @@ export const techIcons = [
   },
   {
     name: "Tailwind",
+    color: "#06B6D4",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>Tailwind CSS</title>
@@ -135,6 +146,7 @@ export const techIcons = [
   },
   {
     name: "shadcn/ui",
+    color: "#FFFFFF",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>shadcn/ui</title>
@@ -147,6 +159,7 @@ export const techIcons = [
   },
   {
     name: "Zod",
+    color: "#408AFF",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>Zod</title>
@@ -159,6 +172,7 @@ export const techIcons = [
   },
   {
     name: "Pino",
+    color: "#687634",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>pino</title>
@@ -171,6 +185,7 @@ export const techIcons = [
   },
   {
     name: "Swagger",
+    color: "#85EA2D",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>Swagger</title>
@@ -184,6 +199,7 @@ export const techIcons = [
 
   {
     name: "Git",
+    color: "#F05032",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>Git</title>
@@ -197,6 +213,7 @@ export const techIcons = [
 
   {
     name: "Vitest",
+    color: "#6E9F18",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>Vitest</title>
@@ -209,6 +226,7 @@ export const techIcons = [
   },
   {
     name: "Figma",
+    color: "#F24E1E",
     svg: (
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>Figma</title>
