@@ -2,6 +2,7 @@ import { highlights, typography } from "@/lib/design-tokens";
 import { Divider } from "../../ui/divider";
 import { memo } from "react";
 import { HERO_DATA } from "@/lib/homepage-data";
+import { cn } from "@/lib/utils";
 
 const HeroSection = memo(() => {
   return (
@@ -18,7 +19,11 @@ const HeroSection = memo(() => {
         </h1>
 
         <p
-          className={`md:mt-5 ${typography.tagline} ${highlights.taglineHighlight}`}
+          className={cn(
+            highlights.taglineHighlight,
+            typography.tagline,
+            "md:mt-5"
+          )}
         >
           {HERO_DATA.tagline}
         </p>

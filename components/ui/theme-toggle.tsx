@@ -16,7 +16,9 @@ export function ThemePicker() {
   const themes = [
     { id: "light", label: "Light" },
     { id: "dark", label: "Dark" },
+    { id: "sunset", label: "Sunset" },
     { id: "neon", label: "Neon" },
+    { id: "tech", label: "Tech" },
     { id: "system", label: "System" },
   ];
 

@@ -2,13 +2,17 @@ import { memo } from "react";
 import { INTRO_DATA } from "@/lib/homepage-data";
 import { Divider } from "../../ui/divider";
 import { typography } from "@/lib/design-tokens";
+import { cn } from "@/lib/utils";
 
 const IntroParagraph = memo(() => {
   return (
     <div className="flex flex-col gap-20 lg:gap-28">
       {/* Desktop version */}
       <p
-        className={`hidden lg:grid lg:grid-cols-2 gap-10 mt-7 text-pretty ${typography.bodyLarge}`}
+        className={cn(
+          typography.bodyLarge,
+          "hidden lg:grid lg:grid-cols-2 gap-10 mt-7"
+        )}
       >
         {INTRO_DATA.desktop.map((paragraph, index) => (
           <span key={index}>{paragraph}</span>

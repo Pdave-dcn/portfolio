@@ -31,7 +31,7 @@ export const SKILLS_DATA = {
   heading: {
     line1: "Skills",
     line2: "&",
-    line3: "Techs",
+    line3: "Technologies",
   },
   strengthsHeading: "Strengths",
 } as const;

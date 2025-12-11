@@ -57,7 +57,7 @@ export const Navbar = memo(() => {
         {navItems}
       </ul>
 
-      <div className="p-1.5 bg-background border border-muted-foreground/10 rounded-full">
+      <div className="p-1.5 bg-background rounded-full">
         <ThemePicker />
       </div>
     </nav>

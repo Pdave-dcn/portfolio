@@ -3,8 +3,8 @@
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant neon (&:is(.neon *));
-@custom-variant midnight (&:is(.midnight *));
-@custom-variant forest (&:is(.forest *));
+@custom-variant tech (&:is(.tech *));
+@custom-variant sunset (&:is(.sunset *));
 
 :root {
   --background: oklch(0.9551 0 0);
@@ -89,6 +89,64 @@
   --border: oklch(0.3279 0.0832 280.789);
   --input: oklch(0.3279 0.0832 280.789);
   --ring: oklch(0.6726 0.2904 341.4084);
+}
+
+/* ===========================
+   Bold Tech Theme
+   =========================== */
+.tech {
+  --background: oklch(0.2077 0.0398 265.7549);
+  --foreground: oklch(0.9299 0.0334 272.7879);
+  --card: oklch(0.2573 0.0861 281.2883);
+  --card-foreground: oklch(0.9299 0.0334 272.7879);
+  --popover: oklch(0.2573 0.0861 281.2883);
+  --popover-foreground: oklch(0.9299 0.0334 272.7879);
+  --primary: oklch(0.6056 0.2189 292.7172);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.2573 0.0861 281.2883);
+  --secondary-foreground: oklch(0.9299 0.0334 272.7879);
+  --muted: oklch(0.2329 0.0919 279.1398);
+  --muted-foreground: oklch(0.8112 0.1013 293.5712);
+  --accent: oklch(0.4568 0.2146 277.0229);
+  --accent-foreground: oklch(0.9299 0.0334 272.7879);
+  --destructive: oklch(0.6368 0.2078 25.3313);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.2827 0.1351 291.0894);
+  --input: oklch(0.2827 0.1351 291.0894);
+  --ring: oklch(0.6056 0.2189 292.7172);
+}
+
+/* ===========================
+   Sunset Horizon Theme
+   =========================== */
+.sunset {
+  --background: oklch(0.2569 0.0169 352.4042);
+  --foreground: oklch(0.9397 0.0119 51.3156);
+
+  --card: oklch(0.3184 0.0176 341.4465);
+  --card-foreground: oklch(0.9397 0.0119 51.3156);
+
+  --popover: oklch(0.3184 0.0176 341.4465);
+  --popover-foreground: oklch(0.9397 0.0119 51.3156);
+
+  --primary: oklch(0.7357 0.1641 34.7091);
+  --primary-foreground: oklch(1 0 0);
+
+  --secondary: oklch(0.3637 0.0203 342.2664);
+  --secondary-foreground: oklch(0.9397 0.0119 51.3156);
+
+  --muted: oklch(0.2848 0.0159 343.6554);
+  --muted-foreground: oklch(0.8378 0.0237 52.6346);
+
+  --accent: oklch(0.8278 0.1131 57.9984);
+  --accent-foreground: oklch(0.2569 0.0169 352.4042);
+
+  --destructive: oklch(0.6122 0.2082 22.241);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.3637 0.0203 342.2664);
+  --input: oklch(0.3637 0.0203 342.2664);
+  --ring: oklch(0.7357 0.1641 34.7091);
 }
 
 @theme inline {

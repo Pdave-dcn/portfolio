@@ -26,6 +26,8 @@ export default function RootLayout({
             light: "light",
             dark: "dark",
             neon: "neon",
+            tech: "tech",
+            sunset: "sunset",
           }}
           defaultTheme="dark"
           enableSystem={false}

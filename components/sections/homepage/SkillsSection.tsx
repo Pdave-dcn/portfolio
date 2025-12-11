@@ -19,7 +19,9 @@ const SkillsSection = memo(() => {
             <span className="neon:text-accent">
               {SKILLS_DATA.heading.line2}
             </span>
-            <span>{SKILLS_DATA.heading.line3}</span>
+            <span className="tech:text-primary">
+              {SKILLS_DATA.heading.line3}
+            </span>
           </div>
         </h2>
 
@@ -65,11 +67,15 @@ const SkillsSection = memo(() => {
               <span
                 role="img"
                 aria-label={tech.name}
-                className="size-10 md:size-12 lg:size-15 flex items-center justify-center mb-1 text-foreground"
+                className={cn(
+                  "flex items-center justify-center",
+                  "size-10 md:size-12 lg:size-15 mb-1 text-foreground",
+                  "sage:text-primary"
+                )}
               >
                 {tech.svg}
               </span>
-              <span className="text-sm font-medium text-muted-foreground">
+              <span className="text-sm font-medium text-muted-foreground sage:text-primary">
                 {tech.name}
               </span>
             </li>
