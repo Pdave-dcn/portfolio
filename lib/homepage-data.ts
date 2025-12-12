@@ -18,6 +18,19 @@ export const INTRO_DATA = {
   ],
 } as const;
 
+export const SKILLS_DATA = {
+  heading: {
+    line1: "Tools",
+    line2: "&",
+    line3: "Technologies",
+  },
+  cta: {
+    word1: "View",
+    word2: "Projects",
+  },
+  strengthsHeading: "Strengths",
+} as const;
+
 export const STRENGTHS_DATA = [
   {
     items: ["Clean, maintainable code", "Thoughtful UI & motion"],
@@ -26,15 +39,6 @@ export const STRENGTHS_DATA = [
     items: ["Solid API + data modeling", "Quick learner, reliable builder"],
   },
 ] as const;
-
-export const SKILLS_DATA = {
-  heading: {
-    line1: "Skills",
-    line2: "&",
-    line3: "Technologies",
-  },
-  strengthsHeading: "Strengths",
-} as const;
 
 export const CTA_DATA = {
   heading: {

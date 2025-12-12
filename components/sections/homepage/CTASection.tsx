@@ -1,3 +1,5 @@
+"use client";
+
 import { memo } from "react";
 import Link from "next/link";
 import { CTA_DATA } from "@/lib/homepage-data";
@@ -5,13 +7,26 @@ import { typography, spacing } from "@/lib/design-tokens";
 import { Divider } from "../../ui/divider";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+import {
+  fadeUp,
+  staggerContainer,
+  viewportOptions,
+} from "@/lib/animation-variants";
 
 const CTASection = memo(() => {
   return (
-    <section className={`flex flex-col ${spacing.sectionGap}`}>
-      {/* <Divider /> */}
-
-      <div className="py-12 md:py-16 space-y-8 md:space-y-10">
+    <motion.section
+      className={`flex flex-col ${spacing.sectionGap}`}
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOptions}
+    >
+      <motion.div
+        variants={fadeUp}
+        className="py-12 md:py-16 space-y-8 md:space-y-10"
+      >
         <div>
           <h2
             className={cn(
@@ -46,10 +61,12 @@ const CTASection = memo(() => {
             </Link>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      <Divider thick />
-    </section>
+      <motion.div variants={fadeUp}>
+        <Divider thick />
+      </motion.div>
+    </motion.section>
   );
 });
 

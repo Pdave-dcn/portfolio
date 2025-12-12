@@ -1,6 +1,6 @@
 import HeroSection from "@/components/sections/projectPage/HeroSection";
 import ProjectSection from "@/components/sections/projectPage/ProjectSection";
-import FooterNavigation from "@/components/sections/projectPage/FooterNavigation";
+import FooterNavigation from "@/components/navigation/FooterNavigation";
 
 const ProjectPage = () => {
   return (
