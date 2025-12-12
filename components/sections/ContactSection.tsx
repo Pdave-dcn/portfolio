@@ -6,7 +6,7 @@ import { typography } from "@/lib/design-tokens";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { CONTACT_LINKS } from "@/lib/contact-page.data";
+import { CONTACT_LINKS } from "@/lib/contact-data";
 import { motion } from "motion/react";
 import {
   fadeUp,
@@ -15,20 +15,29 @@ import {
   viewportOptions,
 } from "@/lib/animation-variants";
 
-const LinkSection = memo(() => {
+const ContactSection = memo(() => {
   return (
     <motion.section
+      id="contact"
       className="mt-16 md:mt-20"
       variants={staggerContainer}
       initial="hidden"
       animate="visible"
     >
-      <motion.div variants={fadeUp}>
+      {/* <motion.div variants={fadeUp}>
         <Divider />
-      </motion.div>
+      </motion.div> */}
 
-      <div className="py-12 md:py-16 space-y-8 md:space-y-10">
-        <h2 className={cn(typography.heading)}>Reach out Anytime</h2>
+      <div className="py-12 md:py-16 space-y-16 md:space-y-20">
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          className={cn(typography.heading)}
+        >
+          Reach out Anytime
+        </motion.h2>
 
         <motion.div
           className="space-y-1"
@@ -53,7 +62,7 @@ const LinkSection = memo(() => {
                   <span className="text-sm text-muted-foreground opacity-70 w-20">
                     {link.label}
                   </span>
-                  <span className="text-base md:text-lg font-medium">
+                  <span className="text-base md:text-lg font-medium neon:text-accent">
                     {link.value}
                   </span>
                 </div>
@@ -74,6 +83,6 @@ const LinkSection = memo(() => {
   );
 });
 
-LinkSection.displayName = "LinkSection";
+ContactSection.displayName = "ContactSection";
 
-export default LinkSection;
+export default ContactSection;

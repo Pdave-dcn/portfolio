@@ -1,7 +1,7 @@
 "use client";
 
 import { highlights, typography } from "@/lib/design-tokens";
-import { Divider } from "../../ui/divider";
+import { Divider } from "../ui/divider";
 import { memo } from "react";
 import { HERO_DATA } from "@/lib/homepage-data";
 import { cn } from "@/lib/utils";
@@ -10,7 +10,7 @@ import { fadeUp, staggerContainer } from "@/lib/animation-variants";
 
 const HeroSection = memo(() => {
   return (
-    <motion.section
+    <motion.div
       className="mt-35 md:mt-40 flex flex-col gap-10 md:gap-7"
       variants={staggerContainer}
       initial="hidden"
@@ -41,7 +41,7 @@ const HeroSection = memo(() => {
       <motion.div variants={fadeUp}>
         <Divider />
       </motion.div>
-    </motion.section>
+    </motion.div>
   );
 });
 

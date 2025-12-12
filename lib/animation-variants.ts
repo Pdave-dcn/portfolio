@@ -101,3 +101,9 @@ export const viewportOptions = {
   margin: "-100px", // Trigger 100px before element enters viewport
   amount: 0.2, // Trigger when 20% of element is visible
 };
+
+export const viewportOptionsProjectSection = {
+  once: true,
+  margin: "-100px",
+  amount: 0.1,
+};

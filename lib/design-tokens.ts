@@ -5,6 +5,7 @@ export const typography = {
   subheading: "text-[1.5rem] md:text-[2rem] lg:text-[3.7rem] font-semibold",
   sectionHeading:
     "text-[2.5rem] leading-8 md:text-[5rem] lg:text-[6rem] md:leading-20 font-bold",
+  title: "text-[2.5rem] md:text-[3rem] lg:text-[3.7rem] font-bold",
   ctaLink: "text-[1.1rem] md:text-[1.6rem] //lg:text-[2rem]",
   body: "text-base md:text-xl text-pretty",
   bodyLarge: "text-xl text-pretty",

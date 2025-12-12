@@ -6,6 +6,10 @@
 @custom-variant tech (&:is(.tech *));
 @custom-variant sunset (&:is(.sunset *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: oklch(0.9551 0 0);
   --foreground: oklch(0.3211 0 0);

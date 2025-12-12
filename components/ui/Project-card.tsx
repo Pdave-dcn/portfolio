@@ -1,7 +1,7 @@
 import { memo } from "react";
 import Link from "next/link";
 import { typography } from "@/lib/design-tokens";
-import { Project } from "@/lib/project-page-data";
+import { Project } from "@/lib/project-data";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 
@@ -54,11 +54,11 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
 
         {/* Project Title & Description */}
         <div className="flex flex-col gap-4.5">
-          <div className="flex flex-col gap-1 lg:gap-2">
+          <div className="flex flex-col">
             <h2
               id={`project-${project.id}-title`}
               className={cn(
-                typography.heading,
+                typography.title,
                 "transition-colors duration-300 group-hover/card:text-foreground",
                 "pointer-events-none"
               )}
@@ -68,7 +68,7 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
             <p
               className={cn(
                 typography.bodyLarge,
-                "md:text-2xl text-pretty",
+                "-mt-2 md:text-2xl",
                 "pointer-events-none"
               )}
             >
@@ -79,7 +79,7 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
           <p
             className={cn(
               typography.body,
-              "text-muted-foreground/80 md:text-muted-foreground/60 group-hover/card:text-muted-foreground text-pretty lg:w-[60%]",
+              "text-muted-foreground/80 md:text-muted-foreground/60 group-hover/card:text-muted-foreground md:w-[70%]  lg:w-[60%]",
               "transition-colors duration-300",
               "pointer-events-none",
               "neon:text-accent/50 neon:lg:text-accent/30 neon:group-hover/card:text-accent"

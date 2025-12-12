@@ -1,9 +1,6 @@
 import { memo } from "react";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { typography } from "@/lib/design-tokens";
 import { SKILLS_DATA } from "@/lib/homepage-data";
-import { cn } from "@/lib/utils";
 
 const SkillsHeader = memo(() => {
   return (
@@ -16,7 +13,7 @@ const SkillsHeader = memo(() => {
         </div>
       </h2>
 
-      <Link
+      {/* <Link
         href="/projects"
         className={cn(
           "group relative flex items-center gap-1.5 py-2 px-3 -mr-3",
@@ -40,7 +37,7 @@ const SkillsHeader = memo(() => {
           size={16}
           className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
         />
-      </Link>
+      </Link> */}
     </div>
   );
 });

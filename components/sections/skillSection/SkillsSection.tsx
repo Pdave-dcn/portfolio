@@ -14,8 +14,9 @@ import StrengthsList from "./StrengthsList";
 
 const SkillsSection = memo(() => {
   return (
-    <motion.div
-      className="mt-2 md:mt-5 flex flex-col gap-8 md:gap-15"
+    <motion.section
+      id="skills"
+      className="flex flex-col gap-8 md:gap-15"
       variants={staggerContainer}
       initial="hidden"
       whileInView="visible"
@@ -42,10 +43,10 @@ const SkillsSection = memo(() => {
         <StrengthsList />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="md:-mt-10">
+      <motion.div variants={fadeUp}>
         <Divider thick />
       </motion.div>
-    </motion.div>
+    </motion.section>
   );
 });
 

@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { memo } from "react";
 import { INTRO_DATA } from "@/lib/homepage-data";
 import { typography } from "@/lib/design-tokens";
-import { Divider } from "../../ui/divider";
+import { Divider } from "../ui/divider";
 import {
   fadeUp,
   staggerContainer,
@@ -13,7 +13,7 @@ import {
 
 const IntroParagraph = memo(() => {
   return (
-    <motion.section
+    <motion.div
       className="flex flex-col gap-20 lg:gap-28"
       variants={staggerContainer}
       initial="hidden"
@@ -43,7 +43,7 @@ const IntroParagraph = memo(() => {
       <motion.div variants={fadeUp}>
         <Divider thick />
       </motion.div>
-    </motion.section>
+    </motion.div>
   );
 });
 
