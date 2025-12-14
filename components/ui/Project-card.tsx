@@ -22,6 +22,11 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
   ];
 
   const handleCardClick = (e: React.MouseEvent) => {
+    // Only navigate on desktop (large screens)
+    if (window.innerWidth < 1024) {
+      return; // Do nothing on mobile/tablet
+    }
+
     // Don't navigate if clicking on a link
     if ((e.target as HTMLElement).closest("a")) {
       return;
@@ -113,6 +118,28 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
         {/* Project Links */}
         <nav aria-label={`Links for ${name}`}>
           <div className="flex gap-1 text-xs md:text-sm">
+            {/* See Details - Mobile/Tablet Only */}
+            <div className="flex items-center gap-1 lg:hidden">
+              <Link
+                href={`/${project.id}`}
+                className={cn(
+                  "group/link inline-flex items-center gap-1 py-2 px-3 font-medium",
+                  "border-b border-muted-foreground/30 md:border-muted-foreground/20"
+                )}
+                aria-label={`View details of ${name}`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <span>Details</span>
+              </Link>
+              <span
+                className="text-muted-foreground/50 mx-1 neon:text-accent/30"
+                aria-hidden="true"
+              >
+                /
+              </span>
+            </div>
+
+            {/* Demo & Repo Links */}
             {projectLinks.map((link, index) => (
               <div key={link.href} className="flex items-center gap-1">
                 <Link
