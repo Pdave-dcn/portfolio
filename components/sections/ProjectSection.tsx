@@ -2,7 +2,10 @@
 
 import { motion } from "motion/react";
 import { ProjectCard } from "@/components/ui/Project-card";
-import { PROJECTS } from "@/lib/project-data";
+import {
+  PROJECT_SECTION_DATA,
+  PROJECTS_WITH_DETAILS as PROJECTS,
+} from "@/lib/project-data";
 import { memo, useMemo } from "react";
 import {
   fadeUp,
@@ -28,15 +31,17 @@ const ProjectSection = memo(() => {
       viewport={viewportOptionsProjectSection}
       className="flex flex-col gap-10"
     >
-      <motion.h2 variants={fadeUp} className={cn(typography.heading)}>
-        Featured Projects
-      </motion.h2>
+      <motion.div variants={fadeUp} className="flex flex-col lg:gap-8">
+        <h2 className={cn(typography.heading)}>{PROJECT_SECTION_DATA.title}</h2>
+        <p className={cn(typography.tagline, "w-[70%]")}>
+          {PROJECT_SECTION_DATA.tagline}
+        </p>
+        <div className="w-[70%]">
+          <Divider />
+        </div>
+      </motion.div>
 
       <div>
-        <motion.div variants={fadeUp} className="lg:mt-8">
-          <Divider />
-        </motion.div>
-
         {displayedProjects.map((project) => (
           <motion.div key={project.id} variants={fadeUp}>
             <ProjectCard project={project} />

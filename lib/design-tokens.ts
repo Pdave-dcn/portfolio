@@ -23,4 +23,6 @@ export const highlights = {
     "relative inline-block w-fit before:content-[''] before:absolute before:top-[60%] before:left-0 before:w-full before:h-1/2 before:bg-background before:-z-10",
   taglineHighlight:
     "relative inline-block w-fit before:content-[''] before:absolute before:top-[8%] before:left-0 before:w-[90%] before:h-1/2 before:bg-background before:-z-10",
+  regularHighlight:
+    "relative inline-block w-fit before:content-[''] before:absolute before:top-[10%] before:left-0 before:w-full before:h-[80%] before:bg-background before:-z-10",
 } as const;

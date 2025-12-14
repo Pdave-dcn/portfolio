@@ -4,6 +4,7 @@ import { typography } from "@/lib/design-tokens";
 import { Project } from "@/lib/project-data";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface ProjectCardProps {
   project: Project;
@@ -12,15 +13,35 @@ interface ProjectCardProps {
 
 export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
   const { type, tags, name, subtitle, description, links } = project;
+
+  const router = useRouter();
+
   const projectLinks = [
     { href: links.demo, label: "Demo" },
     { href: links.repo, label: "Repo" },
   ];
 
+  const handleCardClick = (e: React.MouseEvent) => {
+    // Don't navigate if clicking on a link
+    if ((e.target as HTMLElement).closest("a")) {
+      return;
+    }
+    router.push(`/${project.id}`);
+  };
+
   return (
     <article
-      className={cn("w-full group/card", className)}
+      className={cn("w-full group/card cursor-pointer", className)}
       aria-labelledby={`project-${project.id}-title`}
+      onClick={handleCardClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          router.push(`/${project.id}`);
+        }
+      }}
     >
       <div
         className={cn(
@@ -111,6 +132,7 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
                   aria-label={`View ${link.label.toLowerCase()} of ${name}${
                     link.href.startsWith("http") ? " (opens in new tab)" : ""
                   }`}
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <span>{link.label}</span>
                   <ArrowUpRight
