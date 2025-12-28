@@ -67,7 +67,7 @@ export const PROJECTS_WITH_DETAILS: readonly ProjectWithDetails[] = [
     },
     featured: true,
 
-    // 🆕 Details
+    // Details
     overview:
       "KlasMwen is a modern educational social platform built to centralize student collaboration. It enables sharing notes, asking questions, posting documents, and fostering community-based learning.",
 
@@ -165,7 +165,7 @@ export const PROJECTS_WITH_DETAILS: readonly ProjectWithDetails[] = [
     },
     featured: true,
 
-    // 🆕 Details
+    // Details
     overview:
       "A fast, interactive hidden-object game inspired by Where’s Waldo. Players search characters in a detailed image and compete on a global leaderboard.",
 
@@ -203,6 +203,7 @@ export const PROJECTS_WITH_DETAILS: readonly ProjectWithDetails[] = [
       "Zod",
       "Node.js",
       "Express",
+      "Pino",
       "Prisma",
       "PostgreSQL",
       "Cloudinary",
@@ -247,18 +248,24 @@ export const PROJECTS_WITH_DETAILS: readonly ProjectWithDetails[] = [
     name: "TextNode",
     subtitle: "Blogging Platform with Owner Dashboard",
     description:
-      "A full-stack blog split into a public reader site for visitors and a private editor dashboard for the blog owner to manage posts, drafts, and content.",
+      "A full-stack blog split into a public reader site for visitors and a private editor dashboard for the blog owner to manage articles, drafts, and content.",
     links: {
       demo: "https://textnode-editor.netlify.app/",
       repo: "https://github.com/Pdave-dcn/Fullstack-blog-project",
     },
     featured: true,
 
-    // 🆕 Details
+    // Details
     overview:
-      "TextNode is a modern full-stack blogging platform featuring a public reader interface and a private editor dashboard for authors to create and manage posts.",
+      "TextNode is a modern full-stack blogging platform featuring a public reader interface and a private editor dashboard for authors to create and manage articles.",
 
-    screenshots: [],
+    screenshots: [
+      "/textnode-dashboard.jpeg",
+      "/textnode-reader-articles-page.jpeg",
+      "/textnode-new-article-page.jpeg",
+      "/textnode-article-read-page.jpeg",
+      "/textnode-articles-page.jpeg",
+    ],
 
     coreTechnologies: [
       "Vite",
@@ -266,9 +273,15 @@ export const PROJECTS_WITH_DETAILS: readonly ProjectWithDetails[] = [
       "TypeScript",
       "Tailwind",
       "shadcn/ui",
+      "React Hook Form",
+      "Axios",
+      "React Query",
+      "Zustand",
+      "Zod",
       "Motion",
       "Node.js",
       "Express",
+      "Pino",
       "Prisma",
       "PostgreSQL",
       "TinyMCE Rich Text Editor",
@@ -276,35 +289,37 @@ export const PROJECTS_WITH_DETAILS: readonly ProjectWithDetails[] = [
     ],
 
     highlights: [
-      "Clean separation between reader and editor interfaces",
-      "Draft system with autosave and publish flow",
-      "Rich text editing with TinyMCE integrated into the dashboard",
-      "Role-based access control (author vs. regular user)",
-      "Responsive and animated UI built with Tailwind + Motion",
+      "Two independent frontends (reader & editor) consuming the same API",
+      "DDD‑inspired backend with clear domain, application, and infrastructure layers",
+      "Explicit use cases and centralized authorization",
+      "Zod‑based validation shared across frontend forms and API boundaries",
+      "Role‑based author dashboard with draft, publish, and moderation workflows",
+      "Rate limiting, structured logging, and cookie‑based JWT authentication",
     ],
 
     lessonsLearned: [
-      "Managing authenticated flows between separate frontend apps",
-      "Building secure content editing pipelines",
-      "Designing maintainable REST APIs for CRUD-heavy applications",
-      "Structuring a monorepo with clear frontend/backend separation",
-      "Handling role-based access and permissions effectively",
+      "Applying Domain‑Driven Design pragmatically in a real project",
+      "Designing backend architectures that scale without rewrites",
+      "Structuring monorepos with multiple frontends and a shared API",
+      "Centralizing cross‑cutting concerns like validation, auth, and rate limiting",
+      "Balancing architectural clarity with avoiding over‑engineering",
     ],
 
     challenges: [
-      "Keeping the editor responsive while maintaining state and autosave",
-      "Managing secure creation, editing, and publishing of posts",
-      "Ensuring frontend and backend validation are aligned",
-      "Implementing authentication with JWTs across two separate frontends",
+      "Refactoring an early‑career codebase without breaking existing behavior",
+      "Separating domain logic from Express and Prisma concerns",
+      "Keeping frontend and backend validation fully aligned",
+      "Managing authenticated flows across two separate frontend applications",
     ],
 
     deployment:
       "Frontend apps hosted on Netlify (reader and editor); backend hosted with Node/Express connected to PostgreSQL.",
 
     futureImprovements: [
-      "Add image uploads via Cloudinary",
-      "Add analytics for reader engagement",
-      "Implement more robust comment moderation tools",
+      "Image uploads and media management via Cloudinary",
+      "Shared frontend packages for UI, hooks, and schemas",
+      "Expanded moderation and analytics tooling",
+      "Automated testing for domain and application layers",
     ],
   },
 ] as const;
