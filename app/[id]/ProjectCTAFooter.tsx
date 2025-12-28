@@ -12,10 +12,10 @@ interface ProjectCTAFooterProps {
 const ProjectCTAFooter = memo(({ demoUrl, repoUrl }: ProjectCTAFooterProps) => {
   return (
     <div className="py-12 md:py-16">
-      <h2 className={cn(typography.heading, "mb-6")}>
+      <h2 className={cn(typography.heading, "mb-8")}>
         Interested in this project?
       </h2>
-      <p className={cn(typography.body, "mb-8")}>
+      <p className={cn("text-2xl md:text-[2.3rem] text-pretty", "mb-8")}>
         Check out the live demo or explore the source code.
       </p>
       <div className="flex flex-wrap gap-4">

@@ -4,7 +4,7 @@ export const HERO_DATA = {
     lastName: "Providence",
   },
   tagline:
-    "is a full-stack web developer crafting intuitive interfaces and performant, production-ready software.",
+    "is a haitian full-stack web developer based in the Dominican Republic, crafting intuitive interfaces and performant production-ready software.",
 } as const;
 
 export const INTRO_DATA = {

@@ -41,7 +41,7 @@ const ProjectOverview = memo(
                 </div>
               )}
 
-              {/* Last three images - larger size */}
+              {/* Last three images */}
               {lastThreeImages.length > 0 && (
                 <div className="hidden gap-2 md:grid md:grid-cols-3 md:-mx-20 lg:gap-4 lg:-mx-70">
                   {lastThreeImages.map((image, index) => (
