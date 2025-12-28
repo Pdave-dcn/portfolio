@@ -22,7 +22,6 @@ const SkillsSection = memo(() => {
       whileInView="visible"
       viewport={viewportOptions}
     >
-      {/* Header with title and CTA link */}
       <motion.div variants={fadeUp}>
         <SkillsHeader />
       </motion.div>
@@ -31,17 +30,10 @@ const SkillsSection = memo(() => {
         <Divider />
       </motion.div>
 
-      {/* Tech Icons Grid - has its own internal stagger animation */}
-      <TechIconsGrid />
-
-      <motion.div variants={fadeUp}>
-        <Divider />
-      </motion.div>
-
-      {/* Strengths List */}
-      <motion.div variants={fadeUp}>
+      <div className="space-y-4">
+        <TechIconsGrid />
         <StrengthsList />
-      </motion.div>
+      </div>
 
       <motion.div variants={fadeUp}>
         <Divider thick />

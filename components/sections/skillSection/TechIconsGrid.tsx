@@ -11,51 +11,87 @@ import {
   viewportOptions,
 } from "@/lib/animation-variants";
 
+type TechCategory = "language" | "frontend" | "backend" | "database";
+
+const CATEGORY_LABELS: Record<TechCategory, string> = {
+  language: "Languages",
+  frontend: "Frontend",
+  backend: "Backend",
+  database: "Database",
+};
+
 const TechIconsGrid = memo(() => {
-  const displayedTechs = useMemo(
-    () => TECH_ICONS.filter((icon) => icon.featured),
-    []
-  );
+  const groupedTechs = useMemo(() => {
+    const displayedTechs = TECH_ICONS.filter((icon) => icon.featured);
 
-  const techIconsList = displayedTechs.map((tech) => (
-    <motion.li
-      key={tech.name}
-      variants={fadeUp}
-      className="flex flex-col items-center justify-start text-center p-2 w-1/3 md:w-auto"
-    >
-      <NeonGlow color={tech.color}>
-        <span
-          role="img"
-          aria-label={tech.name}
-          className={cn(
-            "flex items-center justify-center",
-            "size-10 md:size-12 lg:size-15 mb-1 text-foreground"
-          )}
-        >
-          {tech.svg}
-        </span>
-      </NeonGlow>
+    const groups: Record<TechCategory, typeof displayedTechs> = {
+      language: [],
+      frontend: [],
+      backend: [],
+      database: [],
+    };
 
-      <span className="text-sm font-medium text-muted-foreground sage:text-primary">
-        {tech.name}
-      </span>
-    </motion.li>
-  ));
+    displayedTechs.forEach((tech) => {
+      if (tech.category !== "tooling") {
+        groups[tech.category as TechCategory].push(tech);
+      }
+    });
+
+    return groups;
+  }, []);
 
   return (
-    <div className="flex justify-center md:block">
-      <motion.ul
-        className="flex flex-wrap justify-center 
-             grid-cols-3 gap-y-6 
-             md:grid md:grid-cols-4 md:gap-y-8 lg:grid-cols-8"
-        variants={staggerContainerFaster}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOptions}
-      >
-        {techIconsList}
-      </motion.ul>
-    </div>
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
+      variants={staggerContainerFaster}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOptions}
+    >
+      {(Object.keys(groupedTechs) as TechCategory[]).map((category) => {
+        const techs = groupedTechs[category];
+
+        if (techs.length === 0) return null;
+
+        return (
+          <motion.div
+            key={category}
+            variants={fadeUp}
+            className="border border-border/30 p-8"
+          >
+            <h3 className="text-xs uppercase tracking-widest font-medium text-foreground/60 mb-8 text-left">
+              {CATEGORY_LABELS[category]}
+            </h3>
+
+            <ul className="grid grid-cols-2 gap-8">
+              {techs.map((tech) => (
+                <li
+                  key={tech.name}
+                  className="flex flex-col items-center justify-start text-center"
+                >
+                  <NeonGlow color={tech.color}>
+                    <span
+                      role="img"
+                      aria-label={tech.name}
+                      className={cn(
+                        "flex items-center justify-center",
+                        "size-12 md:size-14 lg:size-16 mb-3 text-foreground"
+                      )}
+                    >
+                      {tech.svg}
+                    </span>
+                  </NeonGlow>
+
+                  <span className="text-xs font-normal text-muted-foreground">
+                    {tech.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        );
+      })}
+    </motion.div>
   );
 });
 

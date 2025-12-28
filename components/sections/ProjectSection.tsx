@@ -31,9 +31,15 @@ const ProjectSection = memo(() => {
       viewport={viewportOptionsProjectSection}
       className="flex flex-col gap-10"
     >
-      <motion.div variants={fadeUp} className="flex flex-col lg:gap-6">
+      <motion.div variants={fadeUp} className="flex flex-col gap-3 lg:gap-6">
         <h2 className={cn(typography.heading)}>{PROJECT_SECTION_DATA.title}</h2>
-        <p className={cn(typography.bodyLarge, "w-[70%] md:text-2xl")}>
+        <p
+          className={cn(
+            "w-[90%] md:w-[70%]",
+            "text-2xl md:text-[2.3rem] md:text-pretty",
+            "leading-tight"
+          )}
+        >
           {PROJECT_SECTION_DATA.tagline}
         </p>
         <div className="w-[70%]">

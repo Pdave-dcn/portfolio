@@ -109,6 +109,7 @@ export const PROJECTS_WITH_DETAILS: readonly ProjectWithDetails[] = [
       "Passport.js",
       "Pino",
       "Prisma",
+      "Swagger",
       "PostgreSQL",
       "Cloudinary",
     ],
