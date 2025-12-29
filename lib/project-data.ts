@@ -150,6 +150,90 @@ export const PROJECTS_WITH_DETAILS: readonly ProjectWithDetails[] = [
     ],
   },
 
+  // -------------------------- TEXTNODE --------------------------
+
+  {
+    id: "textnode",
+    type: "Full-Stack",
+    tags: ["blog-platform", "content-management"],
+    name: "TextNode",
+    subtitle: "Blogging Platform with Owner Dashboard",
+    description:
+      "A full-stack blog split into a public reader site for visitors and a private editor dashboard for the blog owner to manage articles, drafts, and content.",
+    links: {
+      demo: "https://textnode-editor.netlify.app/",
+      repo: "https://github.com/Pdave-dcn/Fullstack-blog-project",
+    },
+    featured: true,
+
+    // Details
+    overview:
+      "TextNode is a modern full-stack blogging platform featuring a public reader interface and a private editor dashboard for authors to create and manage articles.",
+
+    screenshots: [
+      "/textnode-dashboard.jpeg",
+      "/textnode-reader-articles-page.jpeg",
+      "/textnode-new-article-page.jpeg",
+      "/textnode-article-read-page.jpeg",
+      "/textnode-articles-page.jpeg",
+    ],
+
+    coreTechnologies: [
+      "Vite",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "shadcn/ui",
+      "React Hook Form",
+      "Axios",
+      "React Query",
+      "Zustand",
+      "Zod",
+      "Motion",
+      "Node.js",
+      "Express",
+      "Pino",
+      "Prisma",
+      "PostgreSQL",
+      "TinyMCE Rich Text Editor",
+      "Passport.js",
+    ],
+
+    highlights: [
+      "Two independent frontends (reader & editor) consuming the same API",
+      "DDD‑inspired backend with clear domain, application, and infrastructure layers",
+      "Explicit use cases and centralized authorization",
+      "Zod‑based validation shared across frontend forms and API boundaries",
+      "Role‑based author dashboard with draft, publish, and moderation workflows",
+      "Rate limiting, structured logging, and cookie‑based JWT authentication",
+    ],
+
+    lessonsLearned: [
+      "Applying Domain‑Driven Design pragmatically in a real project",
+      "Designing backend architectures that scale without rewrites",
+      "Structuring monorepos with multiple frontends and a shared API",
+      "Centralizing cross‑cutting concerns like validation, auth, and rate limiting",
+      "Balancing architectural clarity with avoiding over‑engineering",
+    ],
+
+    challenges: [
+      "Refactoring an early‑career codebase without breaking existing behavior",
+      "Separating domain logic from Express and Prisma concerns",
+      "Keeping frontend and backend validation fully aligned",
+      "Managing authenticated flows across two separate frontend applications",
+    ],
+
+    deployment:
+      "Frontend apps hosted on Netlify (reader and editor); backend hosted with Node/Express connected to PostgreSQL.",
+
+    futureImprovements: [
+      "Image uploads and media management via Cloudinary",
+      "Shared frontend packages for UI, hooks, and schemas",
+      "Expanded moderation and analytics tooling",
+      "Automated testing for domain and application layers",
+    ],
+  },
+
   // -------------------------- WALDO --------------------------
 
   {
@@ -237,90 +321,6 @@ export const PROJECTS_WITH_DETAILS: readonly ProjectWithDetails[] = [
       "Implement optional authentication for personalized experiences",
       "Increase test coverage for frontend and backend",
       "Add new game scenes to expand gameplay variety",
-    ],
-  },
-
-  // -------------------------- TEXTNODE --------------------------
-
-  {
-    id: "textnode",
-    type: "Full-Stack",
-    tags: ["blog-platform", "content-management"],
-    name: "TextNode",
-    subtitle: "Blogging Platform with Owner Dashboard",
-    description:
-      "A full-stack blog split into a public reader site for visitors and a private editor dashboard for the blog owner to manage articles, drafts, and content.",
-    links: {
-      demo: "https://textnode-editor.netlify.app/",
-      repo: "https://github.com/Pdave-dcn/Fullstack-blog-project",
-    },
-    featured: true,
-
-    // Details
-    overview:
-      "TextNode is a modern full-stack blogging platform featuring a public reader interface and a private editor dashboard for authors to create and manage articles.",
-
-    screenshots: [
-      "/textnode-dashboard.jpeg",
-      "/textnode-reader-articles-page.jpeg",
-      "/textnode-new-article-page.jpeg",
-      "/textnode-article-read-page.jpeg",
-      "/textnode-articles-page.jpeg",
-    ],
-
-    coreTechnologies: [
-      "Vite",
-      "React",
-      "TypeScript",
-      "Tailwind",
-      "shadcn/ui",
-      "React Hook Form",
-      "Axios",
-      "React Query",
-      "Zustand",
-      "Zod",
-      "Motion",
-      "Node.js",
-      "Express",
-      "Pino",
-      "Prisma",
-      "PostgreSQL",
-      "TinyMCE Rich Text Editor",
-      "Passport.js",
-    ],
-
-    highlights: [
-      "Two independent frontends (reader & editor) consuming the same API",
-      "DDD‑inspired backend with clear domain, application, and infrastructure layers",
-      "Explicit use cases and centralized authorization",
-      "Zod‑based validation shared across frontend forms and API boundaries",
-      "Role‑based author dashboard with draft, publish, and moderation workflows",
-      "Rate limiting, structured logging, and cookie‑based JWT authentication",
-    ],
-
-    lessonsLearned: [
-      "Applying Domain‑Driven Design pragmatically in a real project",
-      "Designing backend architectures that scale without rewrites",
-      "Structuring monorepos with multiple frontends and a shared API",
-      "Centralizing cross‑cutting concerns like validation, auth, and rate limiting",
-      "Balancing architectural clarity with avoiding over‑engineering",
-    ],
-
-    challenges: [
-      "Refactoring an early‑career codebase without breaking existing behavior",
-      "Separating domain logic from Express and Prisma concerns",
-      "Keeping frontend and backend validation fully aligned",
-      "Managing authenticated flows across two separate frontend applications",
-    ],
-
-    deployment:
-      "Frontend apps hosted on Netlify (reader and editor); backend hosted with Node/Express connected to PostgreSQL.",
-
-    futureImprovements: [
-      "Image uploads and media management via Cloudinary",
-      "Shared frontend packages for UI, hooks, and schemas",
-      "Expanded moderation and analytics tooling",
-      "Automated testing for domain and application layers",
     ],
   },
 ] as const;

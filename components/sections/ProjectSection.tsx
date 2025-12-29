@@ -42,7 +42,7 @@ const ProjectSection = memo(() => {
         >
           {PROJECT_SECTION_DATA.tagline}
         </p>
-        <div className="w-[70%]">
+        <div className="//w-[70%]">
           <Divider />
         </div>
       </motion.div>

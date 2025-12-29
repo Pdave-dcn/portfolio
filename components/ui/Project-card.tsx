@@ -51,7 +51,7 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
       <div
         className={cn(
           "flex flex-col gap-15",
-          "border-b border-muted-foreground/50 md:border-muted-foreground/30 group-hover/card:border-foreground/60",
+          "border-b border-muted-foreground/50 md:border-muted-foreground/30 group-hover/card:border-foreground",
           "py-5 mt-3 md:py-7 md:mt-4.5 lg:mt-5",
           "transition-colors duration-300",
           "neon:border-accent/50 neon:md:border-accent/30 neon:group-hover/card:border-accent"
@@ -62,7 +62,7 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
           className={cn(
             "w-full flex justify-between items-center",
             "text-xs text-muted-foreground/80 md:text-muted-foreground/50",
-            "group-hover/card:text-muted-foreground",
+            "group-hover/card:text-foreground",
             "transition-colors duration-300",
             "pointer-events-none",
             "neon:text-accent/50 neon:md:text-accent/30 neon:group-hover/card:text-accent"
@@ -105,7 +105,7 @@ export const ProjectCard = memo(({ project, className }: ProjectCardProps) => {
           <p
             className={cn(
               typography.body,
-              "text-muted-foreground/80 md:text-muted-foreground/60 group-hover/card:text-muted-foreground md:w-[70%]  lg:w-[60%]",
+              "text-muted-foreground/80 md:text-muted-foreground/60 group-hover/card:text-foreground md:w-[70%]  lg:w-[60%]",
               "transition-colors duration-300",
               "pointer-events-none",
               "neon:text-accent/50 neon:lg:text-accent/30 neon:group-hover/card:text-accent"
