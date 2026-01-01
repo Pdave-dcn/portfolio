@@ -2,16 +2,17 @@ import { memo, useMemo } from "react";
 import { typography } from "@/lib/design-tokens";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import { TECH_ICONS, Technology } from "@/lib/tech-icons";
+import { TECH_ICONS, TechIcon } from "@/lib/tech-icons";
 
 interface TechStackProps {
+  title: string;
   technologies: readonly string[];
 }
 
-const TechStack = memo(({ technologies }: TechStackProps) => {
-  // Create a lookup table: { [name]: Technology }
+const TechStack = memo(({ title, technologies }: TechStackProps) => {
+  // Create a lookup table: { [name]: TechIcon }
   const techIconMap = useMemo(() => {
-    return TECH_ICONS.reduce<Record<string, Technology>>((acc, tech) => {
+    return TECH_ICONS.reduce<Record<string, TechIcon>>((acc, tech) => {
       acc[tech.name] = tech;
       return acc;
     }, {});
@@ -19,7 +20,7 @@ const TechStack = memo(({ technologies }: TechStackProps) => {
 
   return (
     <div className="py-12 md:py-16">
-      <h2 className={cn(typography.subheading, "mb-8")}>Technologies</h2>
+      <h2 className={cn(typography.subheading, "mb-8")}>{title}</h2>
 
       <div className="flex flex-wrap gap-3">
         {technologies.map((techName) => {

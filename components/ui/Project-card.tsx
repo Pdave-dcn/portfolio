@@ -1,10 +1,10 @@
 import { memo } from "react";
 import Link from "next/link";
 import { typography } from "@/lib/design-tokens";
-import { Project } from "@/lib/project-data";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Project } from "@/hooks/useProject";
 
 interface ProjectCardProps {
   project: Project;

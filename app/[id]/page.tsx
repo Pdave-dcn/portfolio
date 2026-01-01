@@ -1,11 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
-import { memo, useMemo } from "react";
+import { memo } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { PROJECTS_WITH_DETAILS } from "@/lib/project-data";
 import { Divider } from "@/components/ui/divider";
 import { cn } from "@/lib/utils";
 import {
@@ -21,26 +20,29 @@ import TechStack from "./TechStack";
 import BulletListSection from "./BulletListSection";
 import ProjectCTAFooter from "./ProjectCTAFooter";
 import Context from "./Context";
+import { useFeaturedProjects } from "@/hooks/useProject";
+import { useLanguageStore } from "@/stores/language.store";
+import { PROJECT_DETAILS_PAGE } from "@/lib/content/projects/project-details-page";
 
 const ProjectDetailPage = memo(() => {
   const params = useParams();
   const projectId = params?.id as string;
 
-  const project = useMemo(
-    () => PROJECTS_WITH_DETAILS.find((p) => p.id === projectId),
-    [projectId]
-  );
+  const lang = useLanguageStore((state) => state.lang);
+  const pageCopy = PROJECT_DETAILS_PAGE[lang];
+
+  const project = useFeaturedProjects(lang).find((p) => p.id === projectId);
 
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Project Not Found</h1>
+          <h1 className="text-2xl font-bold mb-4">{pageCopy.notFound.title}</h1>
           <Link
             href="/"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
-            ← Back to Home
+            ← {pageCopy.notFound.backLink}
           </Link>
         </div>
       </div>
@@ -57,12 +59,12 @@ const ProjectDetailPage = memo(() => {
         >
           {/* Back Button */}
           <motion.div variants={fadeUp}>
-            <BackButton />
+            <BackButton backActionText={pageCopy.cta.linkText.back} />
           </motion.div>
 
           {/* Project Header */}
           <motion.div variants={fadeUp}>
-            <ProjectHeader project={project} />
+            <ProjectHeader project={project} ctaText={pageCopy.cta.linkText} />
           </motion.div>
 
           <motion.div variants={fadeUp}>
@@ -77,6 +79,7 @@ const ProjectDetailPage = memo(() => {
             viewport={viewportOptions}
           >
             <ProjectOverview
+              title={pageCopy.sections.overview.title}
               overview={project.overview}
               screenshots={project.screenshots}
             />
@@ -107,7 +110,10 @@ const ProjectDetailPage = memo(() => {
             whileInView="visible"
             viewport={viewportOptions}
           >
-            <TechStack technologies={project.coreTechnologies} />
+            <TechStack
+              title={pageCopy.sections.technologies.title}
+              technologies={project.coreTechnologies}
+            />
           </motion.div>
 
           <motion.div variants={fadeUp}>
@@ -122,7 +128,7 @@ const ProjectDetailPage = memo(() => {
             viewport={viewportOptions}
           >
             <BulletListSection
-              title="Key Highlights"
+              title={pageCopy.sections.highlights.title}
               items={project.highlights}
               bulletIcon="arrow"
             />
@@ -140,7 +146,7 @@ const ProjectDetailPage = memo(() => {
             viewport={viewportOptions}
           >
             <BulletListSection
-              title="Challenges"
+              title={pageCopy.sections.challenges.title}
               items={project.challenges}
               bulletIcon="dot"
             />
@@ -158,7 +164,7 @@ const ProjectDetailPage = memo(() => {
             viewport={viewportOptions}
           >
             <BulletListSection
-              title="Lessons Learned"
+              title={pageCopy.sections.lessonsLearned.title}
               items={project.lessonsLearned}
               bulletIcon="check"
             />
@@ -179,7 +185,7 @@ const ProjectDetailPage = memo(() => {
                   viewport={viewportOptions}
                 >
                   <BulletListSection
-                    title="Future Improvements"
+                    title={pageCopy.sections.improvements.title}
                     items={project.futureImprovements}
                     bulletIcon="arrowUp"
                   />
@@ -199,6 +205,8 @@ const ProjectDetailPage = memo(() => {
             viewport={viewportOptions}
           >
             <ProjectCTAFooter
+              heading={pageCopy.sections.ctaFooter.heading}
+              ctaText={pageCopy.cta.linkText}
               demoUrl={project.links.demo}
               repoUrl={project.links.repo}
             />
@@ -222,7 +230,7 @@ const ProjectDetailPage = memo(() => {
                 size={16}
                 className="group-hover:-translate-x-1 transition-transform duration-200"
               />
-              <span>Back to Home</span>
+              <span>{pageCopy.notFound.backLink}</span>
             </Link>
           </motion.div>
         </motion.div>

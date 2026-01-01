@@ -1,10 +1,9 @@
-export const HERO_DATA = {
-  title: "Contact",
-  tagline: "Let's build something meaningful together!.",
-} as const;
+import type { Language } from "../i18n/languages";
 
-export const INTRO_DATA = {
-  text: "If you have an idea, a project, or just want to talk tech, I’m always open to conversations that lead to great work.",
+export const CONTACT_HEADING: Record<Language, string> = {
+  en: "Reach out anytime",
+  fr: "Contactez-moi à tout moment",
+  es: "Contáctame en cualquier momento",
 } as const;
 
 export const CONTACT_LINKS = [

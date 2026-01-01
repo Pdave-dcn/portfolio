@@ -6,7 +6,7 @@ import { typography } from "@/lib/design-tokens";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { CONTACT_LINKS } from "@/lib/contact-data";
+import { CONTACT_LINKS } from "@/lib/content/contact";
 import { motion } from "motion/react";
 import {
   fadeUp,
@@ -14,8 +14,12 @@ import {
   staggerContainerFast,
   viewportOptions,
 } from "@/lib/animation-variants";
+import { useLanguageStore } from "@/stores/language.store";
+import { CONTACT_HEADING } from "@/lib/content/contact";
 
 const ContactSection = memo(() => {
+  const lang = useLanguageStore((s) => s.lang);
+  const heading = CONTACT_HEADING[lang];
   return (
     <motion.section
       id="contact"
@@ -36,7 +40,7 @@ const ContactSection = memo(() => {
           viewport={viewportOptions}
           className={cn(typography.heading)}
         >
-          Reach out Anytime
+          {heading}
         </motion.h2>
 
         <motion.div

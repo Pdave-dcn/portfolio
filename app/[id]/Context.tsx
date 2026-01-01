@@ -1,10 +1,10 @@
 import { memo } from "react";
 import { typography } from "@/lib/design-tokens";
 import { cn } from "@/lib/utils";
-import { ProjectContext } from "@/lib/project-data";
+import { Project } from "@/hooks/useProject";
 
 interface ContextProps {
-  context?: ProjectContext;
+  context?: Project["context"];
 }
 
 const Context = memo(({ context }: ContextProps) => {

@@ -16,7 +16,7 @@ const SkillsSection = memo(() => {
   return (
     <motion.section
       id="skills"
-      className="flex flex-col gap-8 md:gap-15"
+      className="flex flex-col gap-8"
       variants={staggerContainer}
       initial="hidden"
       whileInView="visible"

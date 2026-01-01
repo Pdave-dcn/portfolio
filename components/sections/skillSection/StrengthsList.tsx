@@ -1,7 +1,8 @@
 import { memo } from "react";
-import { SKILLS_DATA, STRENGTHS_DATA } from "@/lib/homepage-data";
+import { SKILLS_DATA } from "@/lib/content/skills";
 import { NeonGlow } from "@/components/effects/NeonGlow";
 import { cn } from "@/lib/utils";
+import { useLanguageStore } from "@/stores/language.store";
 
 // SVG Icons for strengths
 const CleanCodeIcon = () => (
@@ -79,13 +80,15 @@ const STRENGTH_ICONS = [
 ];
 
 const StrengthsList = memo(() => {
-  const allStrengthItems = STRENGTHS_DATA.flatMap((group) => group.items);
+  const lang = useLanguageStore((s) => s.lang);
+  const skills = SKILLS_DATA[lang];
+  const allStrengthItems = skills.strengths.items.flatMap((group) => group);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <div className="border border-border/30 p-8 md:col-span-2 lg:col-span-4">
         <h3 className="text-xs uppercase tracking-widest font-medium text-foreground/60 mb-8 text-left">
-          {SKILLS_DATA.strengthsHeading}
+          {skills.strengths.heading}
         </h3>
 
         <div className="w-full flex justify-center">

@@ -9,7 +9,7 @@ type TechCategory =
   | "database"
   | "tooling";
 
-type TechIcon = {
+export type TechIcon = {
   name: string;
   svg: ReactNode;
   color: string;

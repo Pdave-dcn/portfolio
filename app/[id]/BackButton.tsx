@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { highlights } from "@/lib/design-tokens";
 
-const BackButton = memo(() => {
+const BackButton = memo(({ backActionText }: { backActionText: string }) => {
   const router = useRouter();
 
   return (
@@ -23,7 +23,7 @@ const BackButton = memo(() => {
           size={16}
           className="group-hover:-translate-x-1 transition-transform duration-200"
         />
-        <span>Back</span>
+        <span>{backActionText}</span>
       </button>
     </div>
   );

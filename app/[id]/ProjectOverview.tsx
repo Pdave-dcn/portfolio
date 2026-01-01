@@ -4,19 +4,20 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 interface ProjectOverviewProps {
+  title: string;
   overview: string;
   screenshots: string[];
 }
 
 const ProjectOverview = memo(
-  ({ overview, screenshots }: ProjectOverviewProps) => {
+  ({ title, overview, screenshots }: ProjectOverviewProps) => {
     const firstTwoImages = screenshots.slice(0, 2);
     const lastThreeImages = screenshots.slice(2, 5);
 
     return (
       <div className="py-12 md:py-16">
         <div>
-          <h2 className={cn(typography.subheading, "mb-6")}>Overview</h2>
+          <h2 className={cn(typography.subheading, "mb-6")}>{title}</h2>
           <p className={cn(typography.body, "lg:w-[70%]")}>{overview}</p>
 
           {screenshots.length > 0 && (

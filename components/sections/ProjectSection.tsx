@@ -2,11 +2,7 @@
 
 import { motion } from "motion/react";
 import { ProjectCard } from "@/components/ui/Project-card";
-import {
-  PROJECT_SECTION_DATA,
-  PROJECTS_WITH_DETAILS as PROJECTS,
-} from "@/lib/project-data";
-import { memo, useMemo } from "react";
+import { memo } from "react";
 import {
   fadeUp,
   staggerContainer,
@@ -15,12 +11,15 @@ import {
 import { cn } from "@/lib/utils";
 import { typography } from "@/lib/design-tokens";
 import { Divider } from "@/components/ui/divider";
+import { useLanguageStore } from "@/stores/language.store";
+import { PROJECT_SECTION_COPY } from "@/lib/content/projects/section";
+import { useFeaturedProjects } from "@/hooks/useProject";
 
 const ProjectSection = memo(() => {
-  const displayedProjects = useMemo(
-    () => PROJECTS.filter((project) => project.featured),
-    []
-  );
+  const lang = useLanguageStore((state) => state.lang);
+  const heading = PROJECT_SECTION_COPY[lang];
+
+  const displayedProjects = useFeaturedProjects(lang);
 
   return (
     <motion.section
@@ -32,7 +31,7 @@ const ProjectSection = memo(() => {
       className="flex flex-col gap-10"
     >
       <motion.div variants={fadeUp} className="flex flex-col gap-3 lg:gap-6">
-        <h2 className={cn(typography.heading)}>{PROJECT_SECTION_DATA.title}</h2>
+        <h2 className={cn(typography.heading)}>{heading.title}</h2>
         <p
           className={cn(
             "w-[90%] md:w-[70%]",
@@ -40,7 +39,7 @@ const ProjectSection = memo(() => {
             "leading-tight"
           )}
         >
-          {PROJECT_SECTION_DATA.tagline}
+          {heading.tagline}
         </p>
         <div className="//w-[70%]">
           <Divider />

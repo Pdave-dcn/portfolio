@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { memo } from "react";
-import { INTRO_DATA } from "@/lib/homepage-data";
+import { INTRO_DATA } from "@/lib/content/intro";
 import { typography } from "@/lib/design-tokens";
 import { Divider } from "../ui/divider";
 import {
@@ -10,8 +10,11 @@ import {
   staggerContainer,
   viewportOptions,
 } from "@/lib/animation-variants";
+import { useLanguageStore } from "@/stores/language.store";
 
 const IntroParagraph = memo(() => {
+  const lang = useLanguageStore((s) => s.lang);
+  const intro = INTRO_DATA[lang];
   return (
     <motion.div
       className="flex flex-col gap-20 lg:gap-28"
@@ -25,7 +28,7 @@ const IntroParagraph = memo(() => {
         variants={fadeUp}
         className={`hidden lg:grid lg:grid-cols-2 gap-10 mt-7 text-pretty ${typography.bodyLarge}`}
       >
-        {INTRO_DATA.desktop.map((paragraph, index) => (
+        {intro.desktop.map((paragraph, index) => (
           <span key={index}>{paragraph}</span>
         ))}
       </motion.p>
@@ -35,7 +38,7 @@ const IntroParagraph = memo(() => {
         variants={fadeUp}
         className={`md:grid md:grid-cols-2 lg:hidden flex flex-col gap-3 mt-7 text-pretty ${typography.body}`}
       >
-        {INTRO_DATA.mobile.map((paragraph, index) => (
+        {intro.mobile.map((paragraph, index) => (
           <span key={index}>{paragraph}</span>
         ))}
       </motion.p>

@@ -3,13 +3,17 @@ import Link from "next/link";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { highlights, typography } from "@/lib/design-tokens";
 import { cn } from "@/lib/utils";
-import type { ProjectWithDetails } from "@/lib/project-data";
+import type { Project } from "@/hooks/useProject";
 
 interface ProjectHeaderProps {
-  project: ProjectWithDetails;
+  project: Project;
+  ctaText: {
+    demo: string;
+    repo: string;
+  };
 }
 
-const ProjectHeader = memo(({ project }: ProjectHeaderProps) => {
+const ProjectHeader = memo(({ project, ctaText }: ProjectHeaderProps) => {
   return (
     <div className="mb-12 md:mb-16">
       <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 mb-6">
@@ -59,7 +63,7 @@ const ProjectHeader = memo(({ project }: ProjectHeaderProps) => {
             "transition-colors duration-200 rounded-md"
           )}
         >
-          <span>View Live Demo</span>
+          <span>{ctaText.demo}</span>
           <ExternalLink
             size={16}
             className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
@@ -78,7 +82,7 @@ const ProjectHeader = memo(({ project }: ProjectHeaderProps) => {
             "focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
           )}
         >
-          <span>View Repository</span>
+          <span>{ctaText.repo}</span>
           <ArrowUpRight
             size={16}
             className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"

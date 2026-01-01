@@ -3,6 +3,7 @@
 import { memo, useMemo } from "react";
 import Link from "next/link";
 import { ThemePicker } from "../ui/theme-toggle";
+import { LanguagePicker } from "../layout/LanguagePicker";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -39,12 +40,17 @@ export const Navbar = memo(() => {
       className="w-full py-4 md:py-6 flex justify-between items-center"
       aria-label="Main navigation"
     >
-      <ul className="flex items-center gap-1 md:gap-2 px-2 py-1 md:py-1.5 bg-background border border-muted-foreground/10 rounded-full list-none">
+      <ul className="flex items-center gap-1 md:gap-2 px-2 py-1 md:py-1.5 bg-background rounded-full list-none">
         {navItems}
       </ul>
 
-      <div className="p-1.5 bg-background rounded-full">
-        <ThemePicker />
+      <div className="flex items-center gap-2">
+        <div className="p-1.5 bg-background rounded-full">
+          <LanguagePicker />
+        </div>
+        <div className="p-1.5 bg-background rounded-full">
+          <ThemePicker />
+        </div>
       </div>
     </nav>
   );
