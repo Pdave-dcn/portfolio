@@ -12,13 +12,13 @@ export const PROJECT_SECTION_COPY: Record<
     tagline: "Selected work showcasing how I build, structure, and ship.",
   },
   fr: {
-    title: "Projets sélectionnés",
+    title: "Projets en vedette",
     tagline:
-      "Une sélection de projets illustrant ma façon de concevoir, structurer et livrer.",
+      "Une sélection de projets illustrant ma manière de concevoir, structurer et livrer des produits logiciels.",
   },
   es: {
     title: "Proyectos destacados",
     tagline:
-      "Trabajos seleccionados que muestran cómo diseño, estructuro y entrego software.",
+      "Trabajos seleccionados que ilustran mi forma de concebir, estructurar y entregar productos de software.",
   },
 } as const;

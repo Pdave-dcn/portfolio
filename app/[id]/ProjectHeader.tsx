@@ -35,18 +35,14 @@ const ProjectHeader = memo(({ project, ctaText }: ProjectHeaderProps) => {
               </span>
             ))}
           </div>
-          <h1
-            className={cn(
-              typography.heading,
-              "mb-4",
-              highlights.regularHighlight
-            )}
-          >
-            {project.name}
-          </h1>
-          <p className={cn(typography.tagline, highlights.taglineHighlight)}>
-            {project.subtitle}
-          </p>
+          <div className="flex flex-col gap-4">
+            <h1 className={cn(typography.heading, highlights.regularHighlight)}>
+              {project.name}
+            </h1>
+            <p className={cn(typography.tagline, highlights.taglineHighlight)}>
+              {project.subtitle}
+            </p>
+          </div>
         </div>
       </div>
 

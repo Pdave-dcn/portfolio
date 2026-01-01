@@ -15,9 +15,7 @@ export const PROJECT_DETAILS_PAGE: Record<
       overview: {
         title: string;
       };
-      context: {
-        title: string;
-      };
+
       technologies: {
         title: string;
       };
@@ -55,9 +53,7 @@ export const PROJECT_DETAILS_PAGE: Record<
       overview: {
         title: "Overview",
       },
-      context: {
-        title: "Context",
-      },
+
       technologies: {
         title: "Technologies",
       },
@@ -84,22 +80,20 @@ export const PROJECT_DETAILS_PAGE: Record<
   fr: {
     notFound: {
       title: "Projet non trouvé",
-      backLink: "Retour à l'accueil",
+      backLink: "Retour à la page d'accueil",
     },
     cta: {
       linkText: {
         back: "Retour",
-        demo: "Voir la démo en direct",
-        repo: "Voir le dépôt",
+        demo: "Voir la démo",
+        repo: "Consulter le code source",
       },
     },
     sections: {
       overview: {
         title: "Aperçu",
       },
-      context: {
-        title: "Contexte",
-      },
+
       technologies: {
         title: "Technologies",
       },
@@ -118,7 +112,7 @@ export const PROJECT_DETAILS_PAGE: Record<
       ctaFooter: {
         heading: {
           title: "Intéressé par ce projet ?",
-          tagline: "Découvrez la démo en direct ou explorez le dépôt.",
+          tagline: "Découvrez la démo ou explorez le code source.",
         },
       },
     },
@@ -139,9 +133,7 @@ export const PROJECT_DETAILS_PAGE: Record<
       overview: {
         title: "Resumen",
       },
-      context: {
-        title: "Contexto",
-      },
+
       technologies: {
         title: "Tecnologías",
       },

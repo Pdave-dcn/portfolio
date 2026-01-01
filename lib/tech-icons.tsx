@@ -425,7 +425,7 @@ export const TECH_ICONS: TechIcon[] = [
     ),
   },
   {
-    name: "TinyMCE Rich Text Editor",
+    name: "TinyMCE",
     color: "#0c132c",
     featured: false,
     category: "tooling",

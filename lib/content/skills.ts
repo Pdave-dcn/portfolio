@@ -3,11 +3,7 @@ import type { Language } from "../i18n/languages";
 export const SKILLS_DATA: Record<
   Language,
   {
-    heading: {
-      line1: string;
-      line2: string;
-      line3: string;
-    };
+    heading: string;
     strengths: {
       heading: string;
       items: readonly string[][];
@@ -15,11 +11,7 @@ export const SKILLS_DATA: Record<
   }
 > = {
   en: {
-    heading: {
-      line1: "Skills",
-      line2: "&",
-      line3: "Tools",
-    },
+    heading: "Skills & Tools",
     strengths: {
       heading: "Strengths",
       items: [
@@ -30,17 +22,13 @@ export const SKILLS_DATA: Record<
   },
 
   fr: {
-    heading: {
-      line1: "Compétences",
-      line2: "&",
-      line3: "Outils",
-    },
+    heading: "Compétences & Outils",
     strengths: {
       heading: "Points forts",
       items: [
         ["Code propre et maintenable", "UI et animations réfléchies"],
         [
-          "API solides et modélisation des données",
+          "API et modélisation des données solides",
           "Apprentissage rapide, développeur fiable",
         ],
       ],
@@ -48,17 +36,13 @@ export const SKILLS_DATA: Record<
   },
 
   es: {
-    heading: {
-      line1: "Habilidades",
-      line2: "&",
-      line3: "Herramientas",
-    },
+    heading: "Habilidades & Herramientas",
     strengths: {
       heading: "Fortalezas",
       items: [
         ["Código limpio y mantenible", "UI y animaciones cuidadas"],
         [
-          "APIs sólidas y modelado de datos",
+          "APIs y modelado de datos sólidos",
           "Aprendiz rápido, desarrollador confiable",
         ],
       ],

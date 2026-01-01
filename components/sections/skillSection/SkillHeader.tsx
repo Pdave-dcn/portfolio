@@ -8,13 +8,7 @@ const SkillsHeader = memo(() => {
   const skills = SKILLS_DATA[lang];
   return (
     <div className="flex justify-between items-start">
-      <h2 className={`flex gap-2 ${typography.heading}`}>
-        <span>{skills.heading.line1}</span>
-        <div className="flex gap-2">
-          <span className="neon:text-accent">{skills.heading.line2}</span>
-          <span className="tech:text-primary">{skills.heading.line3}</span>
-        </div>
-      </h2>
+      <h2 className={`flex gap-2 ${typography.heading}`}>{skills.heading}</h2>
     </div>
   );
 });

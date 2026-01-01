@@ -27,7 +27,7 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
         primary: {
           label: "Motivation",
           content:
-            "I wanted to challenge myself by building a full-featured social platform from scratch. Instead of cloning an existing network, I chose an educational context to explore real-world features like file sharing, moderation, and structured discussions.",
+            "I wanted to challenge myself by building a full-featured social platform from scratch. Instead of cloning an existing platform, I chose an educational context to explore real-world features like file sharing, moderation, and structured discussions.",
         },
         secondary: {
           label: "Approach",
@@ -171,12 +171,12 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
         primary: {
           label: "Motivation",
           content:
-            "Je voulais me challenger en construisant une plateforme sociale complète à partir de zéro. Plutôt que de cloner un réseau existant, j’ai choisi un contexte éducatif afin d’explorer des fonctionnalités concrètes comme le partage de fichiers, la modération et les discussions structurées.",
+            "Je voulais me challenger en construisant une plateforme sociale complète à partir de zéro. Plutôt que de cloner une plateforme existante, j’ai choisi un contexte éducatif afin d’explorer des fonctionnalités concrètes comme le partage de fichiers, la modération et les discussions structurées.",
         },
         secondary: {
           label: "Approche",
           content:
-            "J’ai conçu et développé un système de bout en bout avec publications, commentaires, réactions, téléversement de fichiers et workflows de modération, en mettant l’accent sur une architecture propre, la sécurité des types et la maintenabilité.",
+            "J'ai conçu et développé un système complet permettant la publication, les commentaires, les réactions, le téléchargement de fichiers et les workflows de modération, en mettant l'accent sur une architecture épurée, la sécurité et la maintenabilité.",
         },
       },
 
@@ -186,7 +186,7 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
         "Système intégré de sécurité et de modération avec signalements utilisateurs et tableaux de bord administrateur",
         "Partage de fichiers avancé avec stockage Cloudinary et extraction automatique des métadonnées",
         "Validation de bout en bout et limitation de débit pour prévenir les abus et garantir l’intégrité des données",
-        "Expérience utilisateur performante avec cache d’état serveur, mises à jour optimistes et recherche avec debounce",
+        "Expérience utilisateur haute performance avec mise en cache de l'état du serveur, mises à jour optimistes et recherche anti-rebond",
       ],
 
       lessonsLearned: [
@@ -199,8 +199,8 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
 
       challenges: [
         "Maintenir la synchronisation entre l’interface utilisateur et les mises à jour serveur",
-        "Gestion efficace des téléversements et téléchargements de fichiers",
-        "Conception de structures de publication et de commentaires scalables",
+        "Gérer efficacement les téléchargements et les chargements de fichiers",
+        "Conception de structures évolutives pour les publications et les commentaires",
         "Garantir la cohérence relationnelle entre publications, commentaires, réactions et favoris",
         "Maintenir une sécurité de typage cohérente entre client, serveur et base de données",
         "Conserver des composants frontend modulaires et un backend bien organisé",
@@ -208,7 +208,7 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
 
       futureImprovements: [
         "Notifications en temps réel via WebSockets",
-        "Chats de groupe et cercles d’étude",
+        "groupe chats et cercles d’étude",
         "Tableau de bord administrateur complet pour la modération et la gestion des utilisateurs",
       ],
     },
@@ -322,7 +322,7 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
         secondary: {
           label: "Enfoque",
           content:
-            "Diseñé y desarrollé un sistema de extremo a extremo con publicaciones, comentarios, reacciones, subida de archivos y flujos de moderación, priorizando una arquitectura limpia, seguridad de tipos y mantenibilidad.",
+            "He diseñado y desarrollado un sistema completo que permite la publicación, los comentarios, las reacciones, la descarga de archivos y los flujos de trabajo de moderación, haciendo hincapié en una arquitectura depurada, la seguridad y la facilidad de mantenimiento.",
         },
       },
 
@@ -345,8 +345,8 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
 
       challenges: [
         "Mantener el estado de la UI sincronizado con el servidor",
-        "Gestión eficiente de subidas y descargas de archivos",
-        "Diseño de estructuras escalables de publicaciones y comentarios",
+        "Gestionar eficazmente las descargas y cargas de archivos",
+        "Diseño de estructuras escalables para publicaciones y comentarios",
         "Garantizar consistencia relacional entre publicaciones, comentarios y reacciones",
         "Mantener seguridad de tipos entre cliente, servidor y base de datos",
         "Mantener componentes frontend modulares y un backend bien organizado",

@@ -25,7 +25,7 @@ export const HERO_DATA: Record<
       lastName: "Providence",
     },
     tagline:
-      "est un développeur web full-stack haïtien basé en République dominicaine, créant des interfaces intuitives et des logiciels performants prêts pour la production.",
+      "est un développeur web full-stack haïtien, basé en République dominicaine, qui conçoit des interfaces intuitives et des logiciels performants, prêts pour la production.",
   },
 
   es: {
@@ -34,6 +34,6 @@ export const HERO_DATA: Record<
       lastName: "Providence",
     },
     tagline:
-      "es un desarrollador web full-stack haitiano con base en la República Dominicana, creando interfaces intuitivas y software eficiente listo para producción.",
+      "es un desarrollador web full-stack haitiano, afincado en la República Dominicana, que diseña interfaces intuitivas y software de alto rendimiento, listos para producción.",
   },
 } as const;
