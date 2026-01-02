@@ -258,10 +258,10 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
       name: "Où est Charlie ?",
       subtitle: "Jeu de recherche visuelle",
       description:
-        "Un jeu interactif de type Où est Charlie dans lequel les joueurs trouvent des personnages et soumettent leur temps à un classement mondial.",
+        "Un jeu interactif de type « Où est Charlie ? » dans lequel les joueurs doivent trouver des personnages et soumettre leurs temps à un tableau de classement.",
 
       overview:
-        "Un jeu rapide et interactif d’objets cachés inspiré de Où est Charlie. Les joueurs recherchent des personnages dans une image détaillée et rivalisent sur un classement mondial.",
+        "Un jeu d'objets cachés rapide et interactif inspiré de « Où est Charlie ? » Les joueurs recherchent des personnages dans une image détaillée et s'affrontent dans un classement global.",
 
       context: {
         primary: {
