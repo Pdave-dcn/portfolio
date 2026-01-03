@@ -4,6 +4,7 @@ import { memo, useMemo } from "react";
 import Link from "next/link";
 import { ThemePicker } from "../ui/theme-toggle";
 import { LanguagePicker } from "../layout/LanguagePicker";
+import { ResumeDownload } from "../layout/ResumeDownload";
 import { useLanguageStore } from "@/stores/language.store";
 import { NAVBAR_COPY } from "@/lib/content/navbar";
 import { cn } from "@/lib/utils";
@@ -30,7 +31,7 @@ export const Navbar = memo(() => {
               href={link.href}
               aria-label={ariaLabel}
               className={cn(
-                "relative px-3 py-1.5 rounded-md text-sm md:text-base font-medium",
+                "relative px-2 md:px-3 py-1.5 rounded-md text-sm md:text-base font-medium",
                 "transition-all duration-200",
                 "neon:text-accent"
               )}
@@ -45,14 +46,15 @@ export const Navbar = memo(() => {
 
   return (
     <nav
-      className="w-full py-4 md:py-6 flex justify-between items-center"
+      className="w-full py-4 md:py-6 flex justify-between items-start md:items-start"
       aria-label={copy.ariaLabel.main}
     >
       <ul className="flex items-center gap-1 md:gap-2 px-2 py-1 md:py-1.5 bg-background rounded-full list-none">
         {navItems}
       </ul>
 
-      <div className="flex items-center gap-2">
+      <div className="flex flex-col md:flex-row md:items-center gap-2">
+        <ResumeDownload />
         <div className="p-1.5 bg-background rounded-full">
           <LanguagePicker />
         </div>

@@ -1,7 +1,7 @@
 export const typography = {
   hero: "text-[4rem] leading-15 md:leading-25 lg:leading-30 md:text-[8rem] lg:text-[9.5rem] font-bold",
   heading:
-    "text-[2.6rem] leading-8.5 md:text-[5rem] lg:text-[6rem] md:leading-20 font-bold",
+    "text-[2.6rem] leading-9 md:text-[5rem] lg:text-[6rem] md:leading-20 font-bold",
   subheading: "text-[1.5rem] md:text-[2rem] lg:text-[3.7rem] font-semibold",
   sectionHeading:
     "text-[2.5rem] leading-8 md:text-[5rem] lg:text-[6rem] md:leading-20 font-bold",
