@@ -1,8 +1,7 @@
 import { memo } from "react";
-import { SKILLS_DATA } from "@/lib/content/skills";
+import { Skills } from "@/lib/content/skills";
 import { NeonGlow } from "@/components/effects/NeonGlow";
 import { cn } from "@/lib/utils";
-import { useLanguageStore } from "@/stores/language.store";
 
 // SVG Icons for strengths
 const CleanCodeIcon = () => (
@@ -79,9 +78,7 @@ const STRENGTH_ICONS = [
   { icon: <LearnerIcon />, color: "#3b82f6" },
 ];
 
-const StrengthsList = memo(() => {
-  const lang = useLanguageStore((s) => s.lang);
-  const skills = SKILLS_DATA[lang];
+const StrengthsList = memo(({ skills }: { skills: Skills }) => {
   const allStrengthItems = skills.strengths.items.flatMap((group) => group);
 
   return (

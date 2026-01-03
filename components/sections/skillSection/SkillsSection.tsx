@@ -11,8 +11,14 @@ import {
 import SkillsHeader from "./SkillHeader";
 import TechIconsGrid from "./TechIconsGrid";
 import StrengthsList from "./StrengthsList";
+import { useLanguageStore } from "@/stores/language.store";
+import { SKILLS_DATA } from "@/lib/content/skills";
 
 const SkillsSection = memo(() => {
+  const lang = useLanguageStore((s) => s.lang);
+  const hydrated = useLanguageStore((s) => s.hydrated);
+
+  const skills = SKILLS_DATA[hydrated ? lang : "en"];
   return (
     <motion.section
       id="skills"
@@ -23,7 +29,7 @@ const SkillsSection = memo(() => {
       viewport={viewportOptions}
     >
       <motion.div variants={fadeUp}>
-        <SkillsHeader />
+        <SkillsHeader title={skills.heading} />
       </motion.div>
 
       <motion.div variants={fadeUp}>
@@ -32,7 +38,7 @@ const SkillsSection = memo(() => {
 
       <div className="space-y-4">
         <TechIconsGrid />
-        <StrengthsList />
+        <StrengthsList skills={skills} />
       </div>
 
       <motion.div variants={fadeUp}>

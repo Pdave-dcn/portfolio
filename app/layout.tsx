@@ -3,6 +3,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Inter } from "next/font/google";
 import { PageWrapper } from "@/components/layout/PageWrapper";
+import { getServerLanguage } from "@/lib/i18n/getServerLanguage";
+import { LanguageProvider } from "@/components/providers/language-provider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -12,11 +14,13 @@ export const metadata: Metadata = {
     "Full-stack developer crafting intuitive interfaces and performant, production-ready software.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const serverLang = await getServerLanguage();
+
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased overflow-x-hidden`}>
@@ -33,7 +37,9 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <PageWrapper>{children}</PageWrapper>
+          <LanguageProvider serverLang={serverLang}>
+            <PageWrapper>{children}</PageWrapper>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

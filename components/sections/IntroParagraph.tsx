@@ -14,7 +14,9 @@ import { useLanguageStore } from "@/stores/language.store";
 
 const IntroParagraph = memo(() => {
   const lang = useLanguageStore((s) => s.lang);
-  const intro = INTRO_DATA[lang];
+  const hydrated = useLanguageStore((s) => s.hydrated);
+
+  const intro = INTRO_DATA[hydrated ? lang : "en"];
   return (
     <motion.div
       className="flex flex-col gap-20 lg:gap-28"

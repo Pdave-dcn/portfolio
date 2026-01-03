@@ -17,9 +17,10 @@ import { useFeaturedProjects } from "@/hooks/useProject";
 
 const ProjectSection = memo(() => {
   const lang = useLanguageStore((state) => state.lang);
-  const heading = PROJECT_SECTION_COPY[lang];
+  const hydrated = useLanguageStore((state) => state.hydrated);
+  const heading = PROJECT_SECTION_COPY[hydrated ? lang : "en"];
 
-  const displayedProjects = useFeaturedProjects(lang);
+  const displayedProjects = useFeaturedProjects(hydrated ? lang : "en");
 
   return (
     <motion.section

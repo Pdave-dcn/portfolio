@@ -49,3 +49,5 @@ export const SKILLS_DATA: Record<
     },
   },
 } as const;
+
+export type Skills = (typeof SKILLS_DATA)[Language];

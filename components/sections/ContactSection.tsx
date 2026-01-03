@@ -19,7 +19,8 @@ import { CONTACT_HEADING } from "@/lib/content/contact";
 
 const ContactSection = memo(() => {
   const lang = useLanguageStore((s) => s.lang);
-  const heading = CONTACT_HEADING[lang];
+  const hydrated = useLanguageStore((s) => s.hydrated);
+  const heading = CONTACT_HEADING[hydrated ? lang : "en"];
   return (
     <motion.section
       id="contact"

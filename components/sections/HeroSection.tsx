@@ -11,7 +11,9 @@ import { HERO_DATA } from "@/lib/content/hero";
 
 const HeroSection = memo(() => {
   const lang = useLanguageStore((s) => s.lang);
-  const hero = HERO_DATA[lang];
+  const hydrated = useLanguageStore((s) => s.hydrated);
+
+  const hero = HERO_DATA[hydrated ? lang : "en"];
 
   return (
     <motion.div

@@ -29,7 +29,9 @@ const ProjectDetailPage = memo(() => {
   const projectId = params?.id as string;
 
   const lang = useLanguageStore((state) => state.lang);
-  const pageCopy = PROJECT_DETAILS_PAGE[lang];
+  const hydrated = useLanguageStore((state) => state.hydrated);
+
+  const pageCopy = PROJECT_DETAILS_PAGE[hydrated ? lang : "en"];
 
   const project = useFeaturedProjects(lang).find((p) => p.id === projectId);
 

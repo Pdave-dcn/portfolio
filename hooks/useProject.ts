@@ -6,7 +6,9 @@ import { Language } from "@/lib/i18n/languages";
 
 export const useProjects = (lang?: Language) => {
   const storeLang = useLanguageStore((state) => state.lang);
-  const currentLang = lang ?? storeLang;
+  const hydrated = useLanguageStore((state) => state.hydrated);
+
+  const currentLang = lang ?? (hydrated ? storeLang : "en");
 
   const projects = useMemo(() => {
     return PROJECTS_META.map((meta) => ({
