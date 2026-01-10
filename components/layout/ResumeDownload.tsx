@@ -8,7 +8,7 @@ export const ResumeDownload = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Pdave_Junior_Full_Stack_Developer.pdf";
+    link.href = "/Pdave_Full_Stack_Developer.pdf";
     link.download = "David_Providence_CV.pdf";
     document.body.appendChild(link);
     link.click();

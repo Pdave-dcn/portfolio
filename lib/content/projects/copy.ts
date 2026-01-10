@@ -38,6 +38,7 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
 
       highlights: [
         "Full social learning platform with posts, comments, bookmarks, and reactions",
+        "Real-time notifications using WebSockets",
         "Robust authentication with JWT, role-based access control, and secure sessions",
         "Built-in safety & moderation system with user reporting and admin dashboards",
         "Advanced file sharing with Cloudinary storage and automatic metadata extraction",
@@ -51,6 +52,7 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
         "Strengthening end-to-end type safety using TypeScript and Zod across API layers",
         "Documenting REST APIs with Swagger / OpenAPI for clarity and maintainability",
         "Setting up scalable backend logging and error tracing using Pino",
+        "Designing and implementing real-time features using WebSockets (Socket.IO)",
       ],
 
       challenges: [
@@ -62,7 +64,6 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
         "Keeping frontend components modular and the backend codebase cleanly organized",
       ],
       futureImprovements: [
-        "Real-time notifications using WebSockets",
         "Group Chats & Study Circles",
         "Complete Admin Dashboard for moderation and user management",
       ],
@@ -182,6 +183,7 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
 
       highlights: [
         "Plateforme sociale d’apprentissage complète avec publications, commentaires, favoris et réactions",
+        "Notifications en temps réel à l'aide de WebSockets",
         "Authentification robuste avec JWT, contrôle d’accès basé sur les rôles et sessions sécurisées",
         "Système intégré de sécurité et de modération avec signalements utilisateurs et tableaux de bord administrateur",
         "Partage de fichiers avancé avec stockage Cloudinary et extraction automatique des métadonnées",
@@ -195,6 +197,7 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
         "Renforcement de la sécurité des types de bout en bout avec TypeScript et Zod",
         "Documentation d’API REST avec Swagger / OpenAPI",
         "Mise en place de logs backend scalables et de traçage d’erreurs avec Pino",
+        "Conception et mise en œuvre de fonctionnalités en temps réel à l'aide de WebSockets (Socket.IO)",
       ],
 
       challenges: [
@@ -328,6 +331,7 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
 
       highlights: [
         "Plataforma social de aprendizaje completa con publicaciones, comentarios, marcadores y reacciones",
+        "Notificaciones en tiempo real mediante WebSockets",
         "Autenticación robusta con JWT, control de acceso por roles y sesiones seguras",
         "Sistema integrado de seguridad y moderación con reportes de usuarios y paneles de administración",
         "Intercambio avanzado de archivos con almacenamiento en Cloudinary y extracción automática de metadatos",
@@ -341,6 +345,7 @@ export const PROJECTS_COPY: Record<Language, Record<string, ProjectCopy>> = {
         "Refuerzo de la seguridad de tipos usando TypeScript y Zod",
         "Documentación de APIs REST con Swagger / OpenAPI",
         "Configuración de logging escalable y trazado de errores con Pino",
+        "Diseño e implementación de funciones en tiempo real utilizando WebSockets (Socket.IO)",
       ],
 
       challenges: [

@@ -35,7 +35,6 @@ const ProjectSection = memo(() => {
         <h2 className={cn(typography.heading)}>{heading.title}</h2>
         <p
           className={cn(
-            "md:w-[70%]",
             "text-2xl md:text-[2.3rem] md:text-pretty",
             "leading-tight"
           )}

@@ -26,7 +26,7 @@ export const PROJECTS_META: readonly ProjectMeta[] = [
     screenshots: [
       "/klasmwen-landing-page.jpg",
       "/klasmwen-post.jpg",
-      "/klasmwen-profile.jpg",
+      "/klasmwen-notifications.png",
       "/klasmwen-report-moderation-1.jpg",
       "/klasmwen-avatar-selection.jpg",
     ],
@@ -42,6 +42,7 @@ export const PROJECTS_META: readonly ProjectMeta[] = [
       "React Hook Form",
       "Markdown Editor",
       "Zod",
+      "Socket.io",
       "Node.js",
       "Express",
       "Passport.js",
