@@ -33,10 +33,15 @@ export const Navbar = memo(() => {
               className={cn(
                 "relative px-2 md:px-3 py-1.5 rounded-md text-sm md:text-base font-medium",
                 "transition-all duration-200",
-                "neon:text-accent"
+                "neon:text-accent",
+                "group"
               )}
             >
-              {label}
+              <span className="relative">
+                {label}
+                {/* Underline animation */}
+                <span className="absolute left-1/2 -bottom-0.5 h-[1.5px] w-0 bg-current transition-all duration-300 ease-out group-hover:left-0 group-hover:w-full" />
+              </span>
             </Link>
           </li>
         );
@@ -49,7 +54,7 @@ export const Navbar = memo(() => {
       className="w-full py-4 md:py-6 flex justify-between items-start md:items-start"
       aria-label={copy.ariaLabel.main}
     >
-      <ul className="flex items-center gap-1 md:gap-2 px-2 py-1 md:py-1.5 bg-background rounded-full list-none">
+      <ul className="flex items-center justify-center gap-1 md:gap-2 px-2 py-1 md:py-1.5 bg-background rounded-full list-none">
         {navItems}
       </ul>
 

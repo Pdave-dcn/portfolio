@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "David Providence - Full-Stack Web Developer",
   description:
     "Full-stack developer crafting intuitive interfaces and performant, production-ready software.",
+  alternates: {
+    canonical: "https://pdaaave.vercel.app",
+  },
 };
 
 export default async function RootLayout({
