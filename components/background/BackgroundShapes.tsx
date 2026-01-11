@@ -8,16 +8,16 @@ type ShapeConfig = {
   top: number;
 };
 
-// Mobile Shape Positions - Edit these positions as needed
+// Mobile Shape Positions
 const MOBILE_SHAPES: ShapeConfig[] = [
   { pattern: "vertical", left: 80, top: -350 },
   { pattern: "horizontal", left: 10, top: 0 },
-  { pattern: "dots", left: 100, top: 50 },
-  { pattern: "dots", left: 350, top: 100 },
-  { pattern: "dots", left: 80, top: 220 },
+  { pattern: "dots", left: 200, top: 0 },
+  { pattern: "dots", left: -380, top: 220 },
+  { pattern: "solid", left: -400, top: 350 },
 ];
 
-// Desktop Shape Positions - Edit these positions as needed
+// Desktop Shape Positions
 const DESKTOP_SHAPES: ShapeConfig[] = [
   { pattern: "dots", left: -50, top: 0 },
   { pattern: "horizontal", left: 1200, top: 300 },

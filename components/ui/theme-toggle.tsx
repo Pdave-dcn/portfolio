@@ -21,7 +21,6 @@ export function ThemePicker() {
     { id: "sunset", label: "Sunset" },
     { id: "neon", label: "Neon" },
     { id: "tech", label: "Tech" },
-    { id: "system", label: "System" },
   ];
 
   return (
